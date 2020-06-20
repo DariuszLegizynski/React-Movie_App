@@ -1,10 +1,15 @@
-import React from "react";
+import "./VideoItem.css";
+import React, { useContext } from "react";
+import { VideoContext } from "./App";
 
 const VideoItem = ({ singleRenderedVideo }) => {
+	const videoContext = useContext(VideoContext);
 	return (
-		<div>
-			<img src={singleRenderedVideo.snippet.thumbnails.medium.url} alt="img" />
-			{singleRenderedVideo.snippet.title}
+		<div onClick={() => videoContext(singleRenderedVideo)} className="video-item item">
+			<img className="ui image" src={singleRenderedVideo.snippet.thumbnails.medium.url} alt="img" />
+			<div className="content">
+				<div className="header">{singleRenderedVideo.snippet.title}</div>
+			</div>
 		</div>
 	);
 };

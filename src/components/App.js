@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, createContext } from "react";
 import NavBar from "./NavBar";
 import youtube from "../apis/youtube";
 import VideoList from "./VideoList";
 
+export const VideoContext = createContext();
+
 function App() {
-	const [ searchedValue, setSearchedValue ] = useState({ videos: [] });
+	const [ searchedValue, setSearchedValue ] = useState({ videos: [], selectedVideo: null });
 
 	const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -21,11 +23,17 @@ function App() {
 		setSearchedValue({ videos: response.data.items });
 	};
 
+	const handleSelectedVideo = (singleRenderedVideo) => {
+		console.log("from App.js: ", singleRenderedVideo);
+	};
+
 	return (
 		<div className="ui container">
-			<NavBar handleSearch={handleSearch} />
-			<p>for "the typed in string" I got {searchedValue.videos.length} results.</p>
-			<VideoList listOfVideos={searchedValue.videos} />
+			<VideoContext.Provider value={handleSelectedVideo}>
+				<NavBar handleSearch={handleSearch} />
+				<p>for "the typed in string" I got {searchedValue.videos.length} results.</p>
+				<VideoList handleSelectedVideo={handleSelectedVideo} listOfVideos={searchedValue.videos} />
+			</VideoContext.Provider>
 		</div>
 	);
 }
