@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NavBar from "./NavBar";
 import youtube from "../apis/youtube";
+import VideoList from "./VideoList";
 
 function App() {
 	const [ searchedValue, setSearchedValue ] = useState({ videos: [] });
@@ -17,8 +18,6 @@ function App() {
 				key: API_KEY
 			}
 		});
-		console.log(inputText);
-		console.log(response);
 		setSearchedValue({ videos: response.data.items });
 	};
 
@@ -26,6 +25,7 @@ function App() {
 		<div className="ui container">
 			<NavBar handleSearch={handleSearch} />
 			<p>for "the typed in string" I got {searchedValue.videos.length} results.</p>
+			<VideoList listOfVideos={searchedValue.videos} />
 		</div>
 	);
 }
