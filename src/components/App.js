@@ -7,7 +7,8 @@ import VideoDetail from "./VideoDetail";
 export const VideoContext = createContext();
 
 function App() {
-	const [ searchedValue, setSearchedValue ] = useState({ videos: [], selectedVideo: null });
+	const [ searchedValue, setSearchedValue ] = useState({ videos: [] });
+	const [ selectedVideo, setSelectedVideo ] = useState({ viewVideo: null });
 
 	const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -26,10 +27,7 @@ function App() {
 
 	const handleSelectedVideo = (singleRenderedVideo) => {
 		// console.log("from App.js: ", singleRenderedVideo);
-		setSearchedValue((previous) => ({
-			...previous,
-			selectedVideo: singleRenderedVideo
-		}));
+		setSelectedVideo({ viewVideo: singleRenderedVideo });
 	};
 
 	return (
@@ -37,7 +35,7 @@ function App() {
 			<NavBar handleSearch={handleSearch} />
 			<VideoContext.Provider value={handleSelectedVideo}>
 				<p>I got {searchedValue.videos.length} results.</p>
-				<VideoDetail video={searchedValue.selectedVideo} />
+				<VideoDetail video={selectedVideo.viewVideo} />
 				<VideoList handleSelectedVideo={handleSelectedVideo} listOfVideos={searchedValue.videos} />
 			</VideoContext.Provider>
 		</div>
