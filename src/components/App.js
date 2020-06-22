@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 import NavBar from "./NavBar";
 import youtube from "../apis/youtube";
 import VideoList from "./VideoList";
@@ -26,6 +26,10 @@ function App() {
 			selectedVideo: response.data.items[0] //take the first search result and make it appear as playable
 		});
 	};
+
+	useEffect(() => {
+		handleSearch();
+	}, []);
 
 	const handleSelectedVideo = (singleRenderedVideo) => {
 		setSearchedValue((previous) => ({
