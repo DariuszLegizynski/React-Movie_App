@@ -2,6 +2,7 @@ import React, { useState, createContext } from "react";
 import NavBar from "./NavBar";
 import youtube from "../apis/youtube";
 import VideoList from "./VideoList";
+import VideoDetail from "./VideoDetail";
 
 export const VideoContext = createContext();
 
@@ -24,14 +25,19 @@ function App() {
 	};
 
 	const handleSelectedVideo = (singleRenderedVideo) => {
-		console.log("from App.js: ", singleRenderedVideo);
+		// console.log("from App.js: ", singleRenderedVideo);
+		setSearchedValue((previous) => ({
+			...previous,
+			selectedVideo: singleRenderedVideo
+		}));
 	};
 
 	return (
 		<div className="ui container">
+			<NavBar handleSearch={handleSearch} />
 			<VideoContext.Provider value={handleSelectedVideo}>
-				<NavBar handleSearch={handleSearch} />
-				<p>for "the typed in string" I got {searchedValue.videos.length} results.</p>
+				<p>I got {searchedValue.videos.length} results.</p>
+				<VideoDetail video={searchedValue.selectedVideo} />
 				<VideoList handleSelectedVideo={handleSelectedVideo} listOfVideos={searchedValue.videos} />
 			</VideoContext.Provider>
 		</div>
