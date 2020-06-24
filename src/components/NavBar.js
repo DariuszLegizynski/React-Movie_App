@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import GoogleAuth from "./GoogleAuth";
 
 const NavBar = (props) => {
 	const [ inputText, setInputText ] = useState("");
@@ -13,16 +14,23 @@ const NavBar = (props) => {
 	};
 
 	return (
-		<div className="search-bar ui segment">
-			<form onSubmit={handleSearch} className="ui form">
-				<div className="field">
-					<label>Video Search</label>
-					<input
-						type="text"
-						placeholder="Type in to search for videos"
-						onChange={handleChange}
-						value={inputText}
-					/>
+		<div className="main-header">
+			<form onSubmit={handleSearch} className="abc">
+				<div className="abc">
+					<div>
+						<label>Video Search</label>
+					</div>
+					<div className="abc">
+						<GoogleAuth />
+					</div>
+					<div>
+						<input
+							type="text"
+							placeholder="Type in to search for videos"
+							onChange={handleChange}
+							value={inputText}
+						/>
+					</div>
 				</div>
 			</form>
 		</div>

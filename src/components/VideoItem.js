@@ -1,4 +1,4 @@
-import "./VideoItem.css";
+import "../css/VideoItem.css";
 import React, { useContext } from "react";
 import { VideoContext } from "./App";
 
