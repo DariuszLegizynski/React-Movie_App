@@ -4,7 +4,6 @@ const OAUTH_KEY = process.env.REACT_APP_OAUTH_KEY;
 
 const GoogleAuth = () => {
 	const [ signedIn, setSignedIn ] = useState({ isSignedIn: null });
-	// const auth = window.gapi.auth2.getAuthInstance();
 
 	const handlAuthChange = () => {
 		setSignedIn({ isSignedIn: window.gapi.auth2.getAuthInstance().isSignedIn.get() });

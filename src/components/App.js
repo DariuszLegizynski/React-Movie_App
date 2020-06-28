@@ -1,3 +1,5 @@
+import "../scss/App.css";
+
 import React, { useState, createContext, useEffect } from "react";
 import NavBar from "./NavBar";
 import youtube from "../apis/youtube";
@@ -39,21 +41,22 @@ function App() {
 	};
 
 	return (
-		<div className="ui container">
-			<NavBar handleSearch={handleSearch} />
-			<p>I got {searchedValue.videos.length} results.</p>
+		<div className="app-wrapper">
+			<div className="app-item-navbar">
+				<NavBar handleSearch={handleSearch} />
+			</div>
+			{/* <p>I got {searchedValue.videos.length} results.</p> */}
 			<VideoContext.Provider value={handleSelectedVideo}>
-				<div className="ui stackable grid">
-					<div className="ui row">
-						<div className="eleven wide column">
-							<VideoDetail video={searchedValue.selectedVideo} />
-						</div>
-						<div className="five wide column">
-							<VideoList handleSelectedVideo={handleSelectedVideo} listOfVideos={searchedValue.videos} />
-						</div>
-					</div>
+				<div className="app-item-videoDetail">
+					<VideoDetail video={searchedValue.selectedVideo} />
+				</div>
+				<div className="app-item-videoList">
+					<VideoList handleSelectedVideo={handleSelectedVideo} listOfVideos={searchedValue.videos} />
 				</div>
 			</VideoContext.Provider>
+			<div className="app-item-playlist">
+				<h3>My awesome Playlist</h3>
+			</div>
 		</div>
 	);
 }
