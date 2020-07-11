@@ -1,7 +1,62 @@
 @import '../styles/variables';
 
 .header {
-	height: 7rem;
+	height: 170rem;
 	background-color: #fff;
 	border-bottom: var(--color-grey-light-2);
+}
+
+/////////////////////////////////////////////////
+// LOGO
+.logo {
+	height: 6em;
+}
+
+/////////////////////////////////////////////////
+// Navbar
+.navbar {
+	&__input {
+	}
+
+	&__button {
+	}
+
+	&__icon {
+		height: 2rem;
+		width: 2rem;
+	}
+}
+
+/////////////////////////////////////////////////
+// USER NAVIGATION
+.user-nav {
+	&__auth {
+	}
+
+	&__icon-box {
+	}
+
+	&__icon {
+		height: 2.25rem;
+		width: 2.25rem;
+	}
+
+	&__notification {
+	}
+
+	&__user {
+	}
+
+	&__user-photo {
+		height: 3.75rem;
+		border-radius: 50%;
+	}
+
+	&__user-name {
+	}
+}
+
+/////////////////////////////////////////////////
+// USER NAVIGATION
+.navbar-bottom {
 }
