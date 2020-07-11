@@ -1,6 +1,8 @@
-import "../scss/Navbar.css";
 import React, { useState } from "react";
 import GoogleAuth from "./GoogleAuth";
+
+import "./NavBar.css";
+import mainLogo from "../images/logo.svg";
 
 const NavBar = (props) => {
 	const [ inputText, setInputText ] = useState("");
@@ -15,31 +17,29 @@ const NavBar = (props) => {
 	};
 
 	return (
-		<div className="navbar-container">
-			<form onSubmit={handleSearch} className="navbar-form">
-				<div className="123navbar-items">
-					<div className="navbar-top-header">
-						<div className="123navbar-label">
-							<label>Video Search: </label>
-						</div>
-						<div className="123nabar-googleAuth">
-							<GoogleAuth />
-						</div>
-					</div>
-					<div className="123navbar-input">
-						<input
-							type="text"
-							placeholder="Type in to search for videos"
-							onChange={handleChange}
-							value={inputText}
-						/>
-					</div>
-					<div>
-						<p>For {inputText}, I got nnnn results.</p>
-					</div>
+		<header className="header">
+			<img src={mainLogo} alt="readeo logo" className="logo" />
+			<form onSubmit={handleSearch} className="navbar">
+				<label>Video Search: </label>
+				<input
+					type="text"
+					placeholder="Type in to search for videos"
+					onChange={handleChange}
+					value={inputText}
+				/>
+				<button className="navbar__button">
+					<svg className="navbar__icon">
+						<use xlinkHref="../images/sprite.svg# icon-search" />
+					</svg>
+				</button>
+				<div className="navbar__auth">
+					<GoogleAuth />
+				</div>
+				<div className="navbar-bot">
+					<p>For {inputText}, I got nnnn results.</p>
 				</div>
 			</form>
-		</div>
+		</header>
 	);
 };
 

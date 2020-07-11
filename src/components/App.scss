@@ -1,0 +1,25 @@
+@import '../styles/variables';
+
+.container {
+	max-width: 120 rem;
+	margin: 1rem auto;
+	background-color: var(--color-grey-light-2);
+	box-shadow: var(--shadow-dark);
+}
+
+.content {
+	display: flex;
+}
+
+.sidebar {
+	background-color: var(--color-grey-light-1);
+
+	flex: 0 0 18%;
+}
+
+.video-view {
+	background-color: #fff;
+	background-color: orangered;
+
+	flex: 1;
+}

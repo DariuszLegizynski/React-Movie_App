@@ -51,7 +51,7 @@ const GoogleAuth = () => {
 		}
 	};
 
-	return <div>Google Auth: {renderAuthButton()}</div>;
+	return <div>{renderAuthButton()}</div>;
 };
 
 export default GoogleAuth;

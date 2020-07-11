@@ -1,15 +1,19 @@
-import "../scss/App.css";
-
 import React, { useState, createContext, useEffect } from "react";
 import NavBar from "./NavBar";
 import youtube from "../apis/youtube";
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
+import SideBar from "./SideBar";
+
+import "./App.css";
 
 export const VideoContext = createContext();
 
 function App() {
-	const [ searchedValue, setSearchedValue ] = useState({ videos: [], selectedVideo: null });
+	const [ searchedValue, setSearchedValue ] = useState({
+		videos: [],
+		selectedVideo: null
+	});
 
 	const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -41,21 +45,24 @@ function App() {
 	};
 
 	return (
-		<div className="app-wrapper">
-			<div className="app-item-navbar">
-				<NavBar handleSearch={handleSearch} />
-			</div>
-			{/* <p>I got {searchedValue.videos.length} results.</p> */}
-			<VideoContext.Provider value={handleSelectedVideo}>
-				<div className="app-item-videoDetail">
-					<VideoDetail video={searchedValue.selectedVideo} />
-				</div>
-				<div className="app-item-videoList">
-					<VideoList handleSelectedVideo={handleSelectedVideo} listOfVideos={searchedValue.videos} />
-				</div>
-			</VideoContext.Provider>
-			<div className="app-item-playlist">
-				<h3>My awesome Playlist</h3>
+		<div className="container">
+			<NavBar handleSearch={handleSearch} />
+			<div className="content">
+				<nav className="sidebar">
+					<SideBar />
+				</nav>
+
+				<main className="video-view">
+					{/* <p>I got {searchedValue.videos.length} results.</p> */}
+					<VideoContext.Provider value={handleSelectedVideo}>
+						<VideoDetail video={searchedValue.selectedVideo} />
+
+						<VideoList
+							handleSelectedVideo={handleSelectedVideo}
+							listOfVideos={searchedValue.videos}
+						/>
+					</VideoContext.Provider>
+				</main>
 			</div>
 		</div>
 	);
