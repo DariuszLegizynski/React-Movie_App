@@ -21,8 +21,8 @@ const NavBar = (props) => {
 	return (
 		<header className="header">
 			<img src={mainLogo} alt="readeo logo" className="logo" />
+
 			<form onSubmit={handleSearch} className="navbar">
-				<label>Video Search: </label>
 				<input
 					className="navbar__input"
 					type="text"
@@ -35,25 +35,23 @@ const NavBar = (props) => {
 						<use href={iconSprites + "#icon-search"} />
 					</svg>
 				</button>
-				<nav className="user-nav">
-					<div className="user-nav__auth">
-						<GoogleAuth />
-					</div>
-					<div className="user-nav__icon-box">
-						<svg className="user-nav__icon">
-							<use href={iconSprites + "#icon-mail"} />
-						</svg>
-						<span className="user-nav__notification">7</span>
-					</div>
-					<div className="user-nav__user">
-						<img src={userFoto} alt="User" className="user-nav__user-photo" />
-						<span className="user-nav__user-name">Thunder</span>
-					</div>
-				</nav>
-				<div className="navbar__bottom">
-					<p>For {inputText}, I got nnnn results.</p>
-				</div>
 			</form>
+
+			<nav className="user-nav">
+				<div className="user-nav__user">
+					<span className="user-nav__user-name">Thunder</span>
+					<img src={userFoto} alt="User" className="user-nav__user-photo" />
+				</div>
+				<div className="user-nav__icon-box">
+					<svg className="user-nav__icon">
+						<use href={iconSprites + "#icon-mail"} />
+					</svg>
+					<span className="user-nav__notification">7</span>
+				</div>
+				<div className="user-nav__auth">
+					<GoogleAuth />
+				</div>
+			</nav>
 		</header>
 	);
 };
