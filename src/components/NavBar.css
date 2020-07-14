@@ -17,7 +17,7 @@
 .header {
   font-size: 1.4rem;
   height: auto;
-  background-color: #fff;
+  background-color: var(--color-fourth);
   border-bottom: var(--color-grey-light-2);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -72,7 +72,7 @@
 
 .navbar__input::-webkit-input-placeholder {
   font-weight: 100;
-  color: var(--color-grey-light-4);
+  color: var(--color-grey-dark-3);
 }
 
 .navbar__input:focus + .navbar__button {

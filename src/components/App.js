@@ -23,7 +23,7 @@ function App() {
 				q: inputText,
 				part: "snippet",
 				type: "video",
-				maxResults: 5,
+				maxResults: 16,
 				key: API_KEY
 			}
 		});
@@ -48,12 +48,9 @@ function App() {
 		<div className="container">
 			<NavBar handleSearch={handleSearch} />
 			<div className="content">
-				<nav className="sidebar">
-					<SideBar />
-				</nav>
+				<SideBar />
 
-				<main className="video-view">
-					{/* <p>I got {searchedValue.videos.length} results.</p> */}
+				<main className="video">
 					<VideoContext.Provider value={handleSelectedVideo}>
 						<VideoDetail video={searchedValue.selectedVideo} />
 
