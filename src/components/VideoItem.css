@@ -11,12 +11,15 @@
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
   --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
+  --shadow-light: 0 0 .8rem rgba(255, 255, 255, 1);
   --default-font-size: 1.6rem;
 }
 
 .video-item {
   background-color: var(--color-tertiary);
   position: relative;
+  -webkit-box-shadow: var(--shadow-dark);
+          box-shadow: var(--shadow-dark);
 }
 
 .video-item__img {
@@ -24,40 +27,52 @@
   z-index: 1;
 }
 
-.video-item__button {
-  border: none;
+.video-item__checkbox {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-color: transparent;
   cursor: pointer;
   height: 2.8rem;
   width: 2.8rem;
-  z-index: 2;
   position: absolute;
   right: 1rem;
   top: 1rem;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  z-index: 3;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
-.video-item__button:visited {
-  outline: none;
-  color: blue;
+.video-item__icon-favorite {
+  height: 2.5rem;
+  width: 2.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 2;
+  filter: drop-shadow(var(--shadow-light));
+  -webkit-filter: drop-shadow(var(--shadow-light));
 }
 
-.video-item__button:hover, .video-item__button:focus {
+.video-item__icon-favorite:focus, .video-item__icon-favorite:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   outline: none;
-}
-
-.video-item__favorite {
-  fill: var(--color-primary);
-  height: 2.5rem;
-  width: 2.5rem;
 }
 
 .video-item__content {
   font-size: 1.2rem;
   text-align: left;
   padding: 1.25rem;
+}
+
+#checkbox-toggle:hover ~ .video-item__icon-favorite {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  outline: none;
+}
+
+#checkbox-toggle:checked ~ .video-item__icon-favorite {
+  fill: var(--color-primary);
 }
 /*# sourceMappingURL=VideoItem.css.map */
