@@ -1,5 +1,52 @@
 @import '../styles/variables';
 
-.video__item {
-	background-color: orangered;
+.video-item {
+	background-color: var(--color-tertiary);
+	position: relative;
+
+	&__img {
+		width: 100%;
+		z-index: 1;
+	}
+
+	&__checkbox {
+		// border: none;
+		// background-color: transparent;
+		// cursor: pointer;
+		// height: 2.8rem;
+		// width: 2.8rem;
+		// z-index: 2;
+		// position: absolute;
+		// right: 1rem;
+		// top: 1rem;
+		// transition: all .2s;
+
+		// &:visited {
+		// 	outline: none;
+		// 	color: blue;
+		// }
+
+		// &:hover,
+		// &:focus {
+		// 	transform: scale(1.2);
+		// 	outline: none;
+		// }
+	}
+
+	&__favorite {
+		fill: var(--color-primary);
+		height: 2.5rem;
+		width: 2.5rem;
+
+		// &:focus {
+		// 	outline: none;
+		// 	fill: black;
+		// }
+	}
+
+	&__content {
+		font-size: 1.2rem;
+		text-align: left;
+		padding: 1.25rem;
+	}
 }
