@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "VideoDetail.scss",
+        "../styles/_variables.scss"
+    ],
+    "names": [],
+    "file": "VideoDetail.css"
+}

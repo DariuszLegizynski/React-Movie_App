@@ -1,25 +1,15 @@
-:root {
-  --color-primary: #defcf9;
-  --color-secondary: #cadefc;
-  --color-tertiary: #c3bef0;
-  --color-fourth: #cca8e9;
-  --color-grey-light-1: #faf9f9;
-  --color-grey-light-2: #f4f2f2;
-  --color-grey-light-3: #f0eeee;
-  --color-grey-light-4: #ccc;
-  --color-grey-dark-1: #333;
-  --color-grey-dark-2: #777;
-  --color-grey-dark-3: #999;
-  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
-  --shadow-light: 0 0 .8rem rgba(255, 255, 255, 1);
-  --default-font-size: 1.6rem;
-}
-
 .video-item {
-  background-color: var(--color-tertiary);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #c3bef0;
   position: relative;
-  -webkit-box-shadow: var(--shadow-dark);
-          box-shadow: var(--shadow-dark);
+  -webkit-box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
 }
 
 .video-item__img {
@@ -50,8 +40,9 @@
   right: 1rem;
   top: 1rem;
   z-index: 2;
-  filter: drop-shadow(var(--shadow-light));
-  -webkit-filter: drop-shadow(var(--shadow-light));
+  fill: #cadefc;
+  filter: drop-shadow(0 0 0.8rem white);
+  -webkit-filter: drop-shadow(0 0 0.8rem white);
 }
 
 .video-item__icon-favorite:focus, .video-item__icon-favorite:hover {
@@ -61,9 +52,24 @@
 }
 
 .video-item__content {
-  font-size: 1.2rem;
-  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
   padding: 1.25rem;
+  font-size: 1.2rem;
+  text-align: center;
+  background-color: #333;
+  color: #faf9f9;
 }
 
 #checkbox-toggle:hover ~ .video-item__icon-favorite {
@@ -73,6 +79,6 @@
 }
 
 #checkbox-toggle:checked ~ .video-item__icon-favorite {
-  fill: var(--color-primary);
+  fill: red;
 }
 /*# sourceMappingURL=VideoItem.css.map */

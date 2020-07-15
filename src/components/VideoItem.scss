@@ -1,9 +1,12 @@
-@import '../styles/variables';
+@import "../styles/variables";
 
 .video-item {
-	background-color: var(--color-tertiary);
+	display: flex;
+	flex-direction: column;
+
+	background-color: $color-tertiary;
 	position: relative;
-	box-shadow: var(--shadow-dark);
+	box-shadow: $shadow-dark;
 
 	&__img {
 		width: 100%;
@@ -31,9 +34,10 @@
 		right: 1rem;
 		top: 1rem;
 		z-index: 2;
+		fill: $color-secondary;
 
-		filter: drop-shadow(var(--shadow-light));
-		-webkit-filter: drop-shadow(var(--shadow-light));
+		filter: drop-shadow($shadow-light);
+		-webkit-filter: drop-shadow($shadow-light);
 
 		&:focus,
 		&:hover {
@@ -43,9 +47,17 @@
 	}
 
 	&__content {
-		font-size: 1.2rem;
-		text-align: left;
+		display: flex;
+		flex: 1;
+		justify-content: center;
+		align-items: center;
+
+		width: 100%;
 		padding: 1.25rem;
+		font-size: 1.2rem;
+		text-align: center;
+		background-color: $color-grey-dark-1;
+		color: $color-grey-light-1;
 	}
 }
 
@@ -56,6 +68,6 @@
 	}
 
 	&:checked ~ .video-item__icon-favorite {
-		fill: var(--color-primary);
+		fill: red;
 	}
 }

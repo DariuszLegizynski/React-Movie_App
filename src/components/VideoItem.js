@@ -13,20 +13,17 @@ const VideoItem = ({ singleRenderedVideo }) => {
 				src={singleRenderedVideo.snippet.thumbnails.medium.url}
 				alt="img"
 			/>
+
 			<input
 				type="checkbox"
 				className="video-item__checkbox"
 				id="checkbox-toggle"
 			/>
-			<svg className="video-item__icon-favorite" for="checkbox-toggle">
+			<svg className="video-item__icon-favorite" htmlFor="checkbox-toggle">
 				<use href={iconSprites + "#icon-star"} />
 			</svg>
 
-			<div className="video-item__content">
-				<div className="video-item_header">
-					{singleRenderedVideo.snippet.title}
-				</div>
-			</div>
+			<div className="video-item__content">{singleRenderedVideo.snippet.title}</div>
 		</div>
 	);
 };
