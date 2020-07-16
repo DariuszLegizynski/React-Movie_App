@@ -1,1 +1,33 @@
-/* No CSS *//*# sourceMappingURL=VideoDetail.css.map */
+.video-detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: auto;
+}
+
+.video-detail__view {
+  position: relative;
+  padding: 18rem 32rem;
+}
+
+.video-detail__view iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-detail__text {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+  padding: 2rem;
+}
+/*# sourceMappingURL=VideoDetail.css.map */
