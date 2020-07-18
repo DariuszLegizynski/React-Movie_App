@@ -1,13 +1,17 @@
 @import '../styles/variables';
 
 .header {
+	position: fixed;
+	top: 0;
 	font-size: 1.4rem;
+	width: 100%;
 	height: auto;
 	background-color: $color-fourth;
 	border-bottom: $color-grey-light-2;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	z-index: 10;
 }
 
 /////////////////////////////////////////////////
@@ -71,63 +75,5 @@
 		height: 2rem;
 		width: 2rem;
 		fill: $color-grey-dark-3;
-	}
-}
-
-/////////////////////////////////////////////////
-// USER NAVIGATION
-.user-nav {
-	align-self: stretch;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	& > * {
-		padding: 0 2rem;
-		cursor: pointer;
-		height: 100%;
-		display: flex;
-		align-items: center;
-	}
-
-	& > *:hover {
-		background-color: $color-grey-light-2;
-	}
-
-	&__auth {
-	}
-
-	&__icon-box {
-		position: relative;
-	}
-
-	&__icon {
-		height: 2.25rem;
-		width: 2.25rem;
-		fill: $color-grey-dark-2;
-	}
-
-	&__notification {
-		font-size: .8rem;
-		height: 1.75rem;
-		width: 1.75rem;
-		border-radius: 50%;
-		background-color: red;
-		color: white;
-		position: absolute;
-		top: 3.25rem;
-		right: 1.1rem;
-
-		// flex works also with text itself, like in the case below
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	&__user-photo {
-		height: 3.75rem;
-		border-radius: 50%;
-		margin-left: 1rem;
 	}
 }

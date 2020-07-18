@@ -9,7 +9,7 @@ import "./App.css";
 
 export const VideoContext = createContext();
 
-function App() {
+const App = () => {
 	const [ searchedValue, setSearchedValue ] = useState({
 		videos: [],
 		selectedVideo: null
@@ -63,6 +63,6 @@ function App() {
 			</div>
 		</div>
 	);
-}
+};
 
 export default App;
