@@ -33,14 +33,16 @@ const SideBar = () => {
 	return (
 		<nav className="sidebar">
 			<ul className="side-nav">
-				{SideBarList.map((list, index) => {
-					return (
-						<li className="side-nav__item">
+				<li className="side-nav__item">
+					{SideBarList.map((list, index) => {
+						return (
 							<div className="side-nav__link">
 								<svg className="side-nav__icon">
 									<use href={iconSprites + "#icon-list"} />
 								</svg>
+
 								<span>{list.title}</span>
+
 								<React.Fragment>
 									<DeleteList
 										key={index}
@@ -49,12 +51,10 @@ const SideBar = () => {
 									/>
 								</React.Fragment>
 							</div>
-						</li>
-					);
-				})}
-				{lists.map((newList, index) => {
-					return (
-						<li className="side-nav__item">
+						);
+					})}
+					{lists.map((newList, index) => {
+						return (
 							<div className="side-nav__link">
 								<svg className="side-nav__icon">
 									<use href={iconSprites + "#icon-list"} />
@@ -68,9 +68,10 @@ const SideBar = () => {
 									/>
 								</React.Fragment>
 							</div>
-						</li>
-					);
-				})}
+						);
+					})}
+				</li>
+
 				<React.Fragment>
 					<CreateNewList onAdd={addList} />
 				</React.Fragment>
