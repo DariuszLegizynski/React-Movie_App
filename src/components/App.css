@@ -4,6 +4,7 @@
   background-color: #f4f2f2;
   -webkit-box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
           box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  /* CSS Smooth Scroll */
 }
 
 .content {
@@ -30,7 +31,6 @@
 }
 
 .video {
-  margin-top: 6rem;
   background-color: #defcf9;
   padding: 1rem;
   display: -webkit-box;
