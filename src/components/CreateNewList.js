@@ -19,6 +19,7 @@ const CreateNewList = (props) => {
 
 	const submitNewList = (event) => {
 		props.onAdd(list);
+		setList({ title: "" });
 		event.preventDefault();
 	};
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SideBarList from "./SideBarList";
 import CreateNewList from "./CreateNewList";
+import DeleteList from "./DeleteList";
 
 import iconSprites from "../images/sprite.svg";
 import "./SideBar.css";
@@ -14,10 +15,25 @@ const SideBar = () => {
 		});
 	};
 
+	//to prevent creating empty lists
+	// function addList ({title}) {
+	//     if(title.length > 0) {
+	//       setNotes(prev => [{title},...prev]);
+	//     }
+	//   }
+
+	const deleteList = (id) => {
+		setLists((prevLists) => {
+			return prevLists.filter((listItem, index) => {
+				return index !== id;
+			});
+		});
+	};
+
 	return (
 		<nav className="sidebar">
 			<ul className="side-nav">
-				{SideBarList.map((list) => {
+				{SideBarList.map((list, index) => {
 					return (
 						<li className="side-nav__item">
 							<div className="side-nav__link">
@@ -25,14 +41,18 @@ const SideBar = () => {
 									<use href={iconSprites + "#icon-list"} />
 								</svg>
 								<span>{list.title}</span>
-								<svg className="side-nav__icon-minus">
-									<use href={iconSprites + "#icon-circle-with-minus"} />
-								</svg>
+								<React.Fragment>
+									<DeleteList
+										key={index}
+										id={index}
+										onDelete={deleteList}
+									/>
+								</React.Fragment>
 							</div>
 						</li>
 					);
 				})}
-				{lists.map((newList) => {
+				{lists.map((newList, index) => {
 					return (
 						<li className="side-nav__item">
 							<div className="side-nav__link">
@@ -40,9 +60,13 @@ const SideBar = () => {
 									<use href={iconSprites + "#icon-list"} />
 								</svg>
 								<span>{newList.title}</span>
-								<svg className="side-nav__icon-minus">
-									<use href={iconSprites + "#icon-circle-with-minus"} />
-								</svg>
+								<React.Fragment>
+									<DeleteList
+										key={index}
+										id={index}
+										onDelete={deleteList}
+									/>
+								</React.Fragment>
 							</div>
 						</li>
 					);
