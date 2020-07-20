@@ -15,7 +15,10 @@ const SideBar = () => {
 								<svg className="side-nav__icon">
 									<use href={iconSprites + "#icon-list"} />
 								</svg>
-								<h4>{list.title}</h4>;
+								<span>{list.title}</span>
+								<svg className="side-nav__icon-minus">
+									<use href={iconSprites + "#icon-circle-with-minus"} />
+								</svg>
 							</a>
 						</li>
 					);

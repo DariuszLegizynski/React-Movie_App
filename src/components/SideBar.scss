@@ -37,6 +37,12 @@
 		background-color: $color-tertiary;
 	}
 
+	&__link {
+		display: flex;
+		// justify-content: space-between;
+		// align-items: center;
+	}
+
 	&__link:link,
 	&__link:visited {
 		color: $color-grey-dark-2;
@@ -56,6 +62,13 @@
 		height: 1.75rem;
 		margin-right: 1rem;
 		fill: currentColor;
+	}
+
+	&__icon-minus {
+		width: 1.75rem;
+		height: 1.75rem;
+		fill: currentColor;
+		margin-left: auto;
 	}
 }
 
