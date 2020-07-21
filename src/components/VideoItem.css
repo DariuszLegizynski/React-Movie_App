@@ -17,86 +17,53 @@
   z-index: 1;
 }
 
-.video-item__checkbox-link {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background-color: transparent;
-  position: absolute;
-  z-index: 2;
-  height: 16.5rem;
-  width: 100%;
-}
-
-.video-item__checkbox-favorite {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background-color: transparent;
-  cursor: pointer;
-  height: 2.8rem;
-  width: 2.8rem;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  z-index: 3;
-  -webkit-transition: .2s;
-  transition: .2s;
-}
-
-.video-item__icon-favorite {
+.video-item__icon--favorite {
   height: 2.5rem;
   width: 2.5rem;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  z-index: 2;
+  position: inherit;
+  z-index: 3;
   fill: #cadefc;
   filter: drop-shadow(0 0 0.8rem white);
   -webkit-filter: drop-shadow(0 0 0.8rem white);
 }
 
-.video-item__icon-favorite:focus, .video-item__icon-favorite:hover {
+.video-item__icon--favorite:focus, .video-item__icon--favorite:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   outline: none;
+}
+
+.video-item__btn--favorite {
+  position: absolute;
+  right: 3rem;
+  top: 1rem;
+  z-index: 2;
+}
+
+.video-item__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .video-item__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   width: 100%;
   padding: 1.25rem;
   font-size: 1.2rem;
   text-align: center;
   background-color: #333;
   color: #faf9f9;
-}
-
-#checkbox-toggle:hover ~ .video-item__icon-favorite {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  outline: none;
-}
-
-#checkbox-toggle:checked ~ .video-item__icon-favorite {
-  fill: red;
-}
-
-#checkbox-link:checked ~ .video-item__link {
-  content: "";
-  outline: none;
-  background-color: orangered;
-  z-index: 10;
 }
 /*# sourceMappingURL=VideoItem.css.map */

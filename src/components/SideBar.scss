@@ -31,6 +31,7 @@
 	&__item:hover::before {
 		transform: scaleY(1);
 		width: 100%;
+		z-index: -1;
 	}
 
 	&__item:active::before {
@@ -39,8 +40,7 @@
 
 	&__link {
 		display: flex;
-		// justify-content: space-between;
-		// align-items: center;
+		align-items: center;
 	}
 
 	&__link:link,
@@ -60,7 +60,7 @@
 	&__icon {
 		width: 1.75rem;
 		height: 1.75rem;
-		margin-right: 1rem;
+		margin: 0 1rem;
 		fill: currentColor;
 	}
 
@@ -68,8 +68,40 @@
 		width: 1.75rem;
 		height: 1.75rem;
 		fill: currentColor;
-		margin-left: auto;
 	}
+
+	&__btn-minus {
+		margin-left: auto;
+		margin-right: 1rem;
+	}
+
+	&__input {
+		width: auto;
+		font-family: inherit;
+		font-size: inherit;
+		background-color: $color-grey-light-2;
+		border: none;
+		border-radius: 1rem;
+		padding-left: .7rem;
+		margin: .7rem 1rem .7rem 0;
+
+		&::-webkit-input-placeholder {
+			font-weight: 100;
+			color: $color-grey-dark-3;
+		}
+	}
+
+	&__span {
+		padding-left: .7rem;
+		margin: .7rem 0;
+	}
+}
+
+.btn {
+	display: flex;
+	align-items: center;
+	border: none;
+	background-color: inherit;
 }
 
 .legal {

@@ -7,7 +7,7 @@ const DeleteList = (props) => {
 	};
 
 	return (
-		<button onClick={handleClick}>
+		<button onClick={handleClick} className="side-nav__btn-minus btn">
 			<svg className="side-nav__icon-minus">
 				<use href={iconSprites + "#icon-circle-with-minus"} />
 			</svg>

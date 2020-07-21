@@ -13,36 +13,12 @@
 		z-index: 1;
 	}
 
-	&__checkbox-link {
-		appearance: none;
-		background-color: transparent;
-		position: absolute;
-		z-index: 2;
-		height: 16.5rem;
-		width: 100%;
-	}
-
-	&__checkbox-favorite {
-		appearance: none;
-		background-color: transparent;
-		cursor: pointer;
-		height: 2.8rem;
-		width: 2.8rem;
-		position: absolute;
-		right: 1rem;
-		top: 1rem;
-		z-index: 3;
-
-		transition: .2s;
-	}
-
-	&__icon-favorite {
+	&__icon--favorite {
 		height: 2.5rem;
 		width: 2.5rem;
-		position: absolute;
-		right: 1rem;
-		top: 1rem;
-		z-index: 2;
+		position: inherit;
+
+		z-index: 3;
 		fill: $color-secondary;
 
 		filter: drop-shadow($shadow-light);
@@ -55,11 +31,22 @@
 		}
 	}
 
+	&__btn--favorite {
+		position: absolute;
+		right: 3rem;
+		top: 1rem;
+		z-index: 2;
+	}
+
+	&__link {
+		display: flex;
+	}
+
 	&__content {
 		display: flex;
-		flex: 1;
 		justify-content: center;
 		align-items: center;
+		flex: 1;
 
 		width: 100%;
 		padding: 1.25rem;
@@ -67,25 +54,5 @@
 		text-align: center;
 		background-color: $color-grey-dark-1;
 		color: $color-grey-light-1;
-	}
-}
-
-#checkbox-toggle {
-	&:hover ~ .video-item__icon-favorite {
-		transform: scale(1.2);
-		outline: none;
-	}
-
-	&:checked ~ .video-item__icon-favorite {
-		fill: red;
-	}
-}
-
-#checkbox-link {
-	&:checked ~ .video-item__link {
-		content: "";
-		outline: none;
-		background-color: orangered;
-		z-index: 10;
 	}
 }

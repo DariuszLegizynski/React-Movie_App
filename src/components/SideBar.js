@@ -15,16 +15,16 @@ const SideBar = () => {
 		});
 	};
 
-	//to prevent creating empty lists
-	// function addList ({title}) {
+	//to prevent creating empty lists objects
+	// const addList = ({title}) =>  {
 	//     if(title.length > 0) {
-	//       setNotes(prev => [{title},...prev]);
+	//       setLists(prev => [{title},...prev]);
 	//     }
 	//   }
 
 	const deleteList = (id) => {
 		setLists((prevLists) => {
-			return prevLists.filter((listItem, index) => {
+			return prevLists.filter((index) => {
 				return index !== id;
 			});
 		});
@@ -33,16 +33,37 @@ const SideBar = () => {
 	return (
 		<nav className="sidebar">
 			<ul className="side-nav">
-				<li className="side-nav__item">
-					{SideBarList.map((list, index) => {
-						return (
+				{/* //this part is to get the lists from the SideBarList.js file */}
+				{SideBarList.map((list) => {
+					return (
+						<li className="side-nav__item">
 							<div className="side-nav__link">
 								<svg className="side-nav__icon">
 									<use href={iconSprites + "#icon-list"} />
 								</svg>
 
-								<span>{list.title}</span>
+								<span className="side-nav__span">{list.title}</span>
 
+								<React.Fragment>
+									<DeleteList
+										key={list.key}
+										id={list.key}
+										onDelete={deleteList}
+									/>
+								</React.Fragment>
+							</div>
+						</li>
+					);
+				})}
+				{/* //This part is for deleting and styling newly added lists */}
+				{lists.map((newList, index) => {
+					return (
+						<li className="side-nav__item">
+							<div className="side-nav__link">
+								<svg className="side-nav__icon">
+									<use href={iconSprites + "#icon-list"} />
+								</svg>
+								<span className="side-nav__span">{newList.title}</span>
 								<React.Fragment>
 									<DeleteList
 										key={index}
@@ -51,26 +72,9 @@ const SideBar = () => {
 									/>
 								</React.Fragment>
 							</div>
-						);
-					})}
-					{lists.map((newList, index) => {
-						return (
-							<div className="side-nav__link">
-								<svg className="side-nav__icon">
-									<use href={iconSprites + "#icon-list"} />
-								</svg>
-								<span>{newList.title}</span>
-								<React.Fragment>
-									<DeleteList
-										key={index}
-										id={index}
-										onDelete={deleteList}
-									/>
-								</React.Fragment>
-							</div>
-						);
-					})}
-				</li>
+						</li>
+					);
+				})}
 
 				<React.Fragment>
 					<CreateNewList onAdd={addList} />

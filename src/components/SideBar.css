@@ -35,6 +35,7 @@
   -webkit-transform: scaleY(1);
           transform: scaleY(1);
   width: 100%;
+  z-index: -1;
 }
 
 .side-nav__item:active::before {
@@ -45,6 +46,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .side-nav__link:link, .side-nav__link:visited {
@@ -66,7 +70,7 @@
 .side-nav__icon {
   width: 1.75rem;
   height: 1.75rem;
-  margin-right: 1rem;
+  margin: 0 1rem;
   fill: currentColor;
 }
 
@@ -74,7 +78,43 @@
   width: 1.75rem;
   height: 1.75rem;
   fill: currentColor;
+}
+
+.side-nav__btn-minus {
   margin-left: auto;
+  margin-right: 1rem;
+}
+
+.side-nav__input {
+  width: auto;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #f4f2f2;
+  border: none;
+  border-radius: 1rem;
+  padding-left: .7rem;
+  margin: .7rem 1rem .7rem 0;
+}
+
+.side-nav__input::-webkit-input-placeholder {
+  font-weight: 100;
+  color: #999;
+}
+
+.side-nav__span {
+  padding-left: .7rem;
+  margin: .7rem 0;
+}
+
+.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  background-color: inherit;
 }
 
 .legal {

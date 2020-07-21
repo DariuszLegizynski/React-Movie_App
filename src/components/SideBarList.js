@@ -5,7 +5,7 @@ const SideBarList = [
 	},
 	{
 		key: 2,
-		title: "cats and dogs"
+		title: "Cats and Dogs"
 	}
 ];
 
