@@ -29,7 +29,7 @@ const App = () => {
 		});
 		setSearchedValue({
 			videos: response.data.items,
-			selectedVideo: response.data.items[0] //take the first search result and make it appear as playable
+			selectedVideo: response.data.items[0] //take the first search result and make it appear as a playable one
 		});
 	};
 

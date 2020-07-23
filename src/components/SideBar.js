@@ -24,7 +24,7 @@ const SideBar = () => {
 
 	const deleteList = (id) => {
 		setLists((prevLists) => {
-			return prevLists.filter((index) => {
+			return prevLists.filter((listItem, index) => {
 				return index !== id;
 			});
 		});
@@ -41,16 +41,12 @@ const SideBar = () => {
 								<svg className="side-nav__icon">
 									<use href={iconSprites + "#icon-list"} />
 								</svg>
-
 								<span className="side-nav__span">{list.title}</span>
-
-								<React.Fragment>
-									<DeleteList
-										key={list.key}
-										id={list.key}
-										onDelete={deleteList}
-									/>
-								</React.Fragment>
+								<DeleteList
+									key={list.key}
+									id={list.key}
+									onDelete={deleteList}
+								/>
 							</div>
 						</li>
 					);
@@ -64,21 +60,16 @@ const SideBar = () => {
 									<use href={iconSprites + "#icon-list"} />
 								</svg>
 								<span className="side-nav__span">{newList.title}</span>
-								<React.Fragment>
-									<DeleteList
-										key={index}
-										id={index}
-										onDelete={deleteList}
-									/>
-								</React.Fragment>
+								<DeleteList
+									key={index}
+									id={index}
+									onDelete={deleteList}
+								/>
 							</div>
 						</li>
 					);
 				})}
-
-				<React.Fragment>
-					<CreateNewList onAdd={addList} />
-				</React.Fragment>
+				<CreateNewList onAdd={addList} />
 			</ul>
 
 			<div className="legal">&copy; 2020 by Readeo. All rights reserved.</div>

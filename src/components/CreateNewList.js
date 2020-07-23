@@ -24,24 +24,29 @@ const CreateNewList = (props) => {
 	};
 
 	return (
-		<li className="side-nav__item">
-			<form>
-				<div className="side-nav__link">
-					<button onClick={submitNewList} className="side-nav__btn-plus btn">
-						<svg className="side-nav__icon">
-							<use href={iconSprites + "#icon-circle-with-plus"} />
-						</svg>
-					</button>
-					<input
-						className="side-nav__input"
-						name="title"
-						value={list.title}
-						onChange={handleChange}
-						placeholder="New List"
-					/>
-				</div>
-			</form>
-		</li>
+		<React.Fragment>
+			<li className="side-nav__item">
+				<form>
+					<div className="side-nav__link">
+						<button
+							onClick={submitNewList}
+							className="side-nav__btn-plus btn"
+						>
+							<svg className="side-nav__icon">
+								<use href={iconSprites + "#icon-circle-with-plus"} />
+							</svg>
+						</button>
+						<input
+							className="side-nav__input"
+							name="title"
+							value={list.title}
+							onChange={handleChange}
+							placeholder="New List"
+						/>
+					</div>
+				</form>
+			</li>
+		</React.Fragment>
 	);
 };
 

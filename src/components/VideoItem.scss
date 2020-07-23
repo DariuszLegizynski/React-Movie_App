@@ -2,11 +2,28 @@
 
 .video-item {
 	display: flex;
-	flex-direction: column;
-
 	background-color: $color-tertiary;
 	position: relative;
 	box-shadow: $shadow-dark;
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: 1;
+
+		width: 100%;
+		padding: 1.25rem;
+		font-size: 1.2rem;
+		text-align: center;
+		background-color: $color-grey-dark-1;
+		color: $color-grey-light-1;
+	}
 
 	&__img {
 		width: 100%;
@@ -34,25 +51,11 @@
 	&__btn--favorite {
 		position: absolute;
 		right: 3rem;
-		top: 1rem;
+		top: 2rem;
 		z-index: 2;
 	}
 
 	&__link {
 		display: flex;
-	}
-
-	&__content {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-
-		width: 100%;
-		padding: 1.25rem;
-		font-size: 1.2rem;
-		text-align: center;
-		background-color: $color-grey-dark-1;
-		color: $color-grey-light-1;
 	}
 }
