@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import SideBarList from "./SideBarList";
 import CreateNewList from "./CreateNewList";
 import DeleteList from "./DeleteList";
+import FavoriteItem from "./FavoriteItem";
 
 import iconSprites from "../images/sprite.svg";
 import "./SideBar.css";
 
-const SideBar = () => {
+const SideBar = ({ video, handleFavoritedVideo }) => {
 	const [ lists, setLists ] = useState([]);
 
 	const addList = (newList) => {
@@ -33,7 +34,7 @@ const SideBar = () => {
 	return (
 		<nav className="sidebar">
 			<ul className="side-nav">
-				{/* //this part is to get the lists from the SideBarList.js file */}
+				{/* //this part gets the lists from the SideBarList.js file */}
 				{SideBarList.map((list) => {
 					return (
 						<li className="side-nav__item">
@@ -51,7 +52,7 @@ const SideBar = () => {
 						</li>
 					);
 				})}
-				{/* //This part is for deleting and styling newly added lists */}
+				{/* //This part keeps track of the newly created lists and also allows to delete them */}
 				{lists.map((newList, index) => {
 					return (
 						<li className="side-nav__item">
@@ -69,6 +70,7 @@ const SideBar = () => {
 						</li>
 					);
 				})}
+				<FavoriteItem video={video} handleFavoritedVideo={handleFavoritedVideo} />
 				<CreateNewList onAdd={addList} />
 			</ul>
 

@@ -8,11 +8,13 @@ import SideBar from "./SideBar";
 import "./App.css";
 
 export const VideoContext = createContext();
+export const FavoriteContext = createContext();
 
 const App = () => {
 	const [ searchedValue, setSearchedValue ] = useState({
 		videos: [],
-		selectedVideo: null
+		selectedVideo: null,
+		favoritedVideo: null
 	});
 
 	const API_KEY = process.env.REACT_APP_API_KEY;
@@ -44,20 +46,29 @@ const App = () => {
 		}));
 	};
 
+	const handleFavoritedVideo = (favorited) => {
+		setSearchedValue((previous) => ({
+			...previous,
+			favoritedVideo: favorited
+		}));
+		console.log(favorited);
+	};
+
 	return (
 		<div className="container">
 			<NavBar handleSearch={handleSearch} />
 			<div className="content">
-				<SideBar />
+				<SideBar
+					handleFavoritedVideo={handleFavoritedVideo}
+					video={searchedValue.favoritedVideo}
+				/>
 
 				<main className="video">
 					<VideoContext.Provider value={handleSelectedVideo}>
-						<VideoDetail video={searchedValue.selectedVideo} />
-
-						<VideoList
-							handleSelectedVideo={handleSelectedVideo}
-							listOfVideos={searchedValue.videos}
-						/>
+						<FavoriteContext.Provider value={handleFavoritedVideo}>
+							<VideoDetail video={searchedValue.selectedVideo} />
+							<VideoList listOfVideos={searchedValue.videos} />
+						</FavoriteContext.Provider>
 					</VideoContext.Provider>
 				</main>
 			</div>

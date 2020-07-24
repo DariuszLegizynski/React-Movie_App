@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { VideoContext } from "./App";
+import { VideoContext, FavoriteContext } from "./App";
 import { Link } from "react-scroll";
 
 import "./VideoItem.css";
@@ -7,12 +7,7 @@ import iconSprites from "../images/sprite.svg";
 
 const VideoItem = ({ singleRenderedVideo }) => {
 	const videoContext = useContext(VideoContext);
-
-	const handleClickFavorite = () => {
-		videoContext(singleRenderedVideo);
-
-		console.log("favorite clicked! ");
-	};
+	const favoriteContext = useContext(FavoriteContext);
 
 	return (
 		<div className="video-item">
@@ -30,7 +25,7 @@ const VideoItem = ({ singleRenderedVideo }) => {
 				>
 					<img
 						className="video-item__img"
-						src={singleRenderedVideo.snippet.thumbnails.medium.url}
+						src={singleRenderedVideo.snippet.thumbnails.high.url}
 						alt="img"
 					/>
 
@@ -41,7 +36,7 @@ const VideoItem = ({ singleRenderedVideo }) => {
 			</Link>
 
 			<button
-				onClick={handleClickFavorite}
+				onClick={() => favoriteContext(singleRenderedVideo)}
 				className="video-item__btn--favorite btn"
 			>
 				<svg className="video-item__icon--favorite">
