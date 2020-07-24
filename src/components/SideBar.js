@@ -9,6 +9,7 @@ import "./SideBar.css";
 
 const SideBar = ({ video, handleFavoritedVideo }) => {
 	const [ lists, setLists ] = useState([]);
+	const [ favorite, setFavorite ] = useState([]);
 
 	const addList = (newList) => {
 		setLists((prevLists) => {
@@ -28,6 +29,12 @@ const SideBar = ({ video, handleFavoritedVideo }) => {
 			return prevLists.filter((listItem, index) => {
 				return index !== id;
 			});
+		});
+	};
+
+	const addFavorite = (newFavorite) => {
+		setFavorite((prevFavorite) => {
+			return [ ...prevFavorite, newFavorite ];
 		});
 	};
 
@@ -61,6 +68,26 @@ const SideBar = ({ video, handleFavoritedVideo }) => {
 									<use href={iconSprites + "#icon-list"} />
 								</svg>
 								<span className="side-nav__span">{newList.title}</span>
+								{favorite.map((newFavorite) => {
+									return (
+										<li className="favorite-list">
+											<img
+												className="video-item__img"
+												src={
+													newFavorite.snippet.thumbnails.medium
+														.url
+												}
+												alt="img"
+											/>
+											<span>{newFavorite.title}</span>
+										</li>
+									);
+								})}
+								<FavoriteItem
+									addFavorite={addFavorite}
+									video={video}
+									handleFavoritedVideo={handleFavoritedVideo}
+								/>
 								<DeleteList
 									key={index}
 									id={index}
@@ -70,7 +97,6 @@ const SideBar = ({ video, handleFavoritedVideo }) => {
 						</li>
 					);
 				})}
-				<FavoriteItem video={video} handleFavoritedVideo={handleFavoritedVideo} />
 				<CreateNewList onAdd={addList} />
 			</ul>
 

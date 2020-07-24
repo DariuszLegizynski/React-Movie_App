@@ -5,14 +5,21 @@ const FavoriteItem = ({ video, handleFavoritedVideo }) => {
 		return <div>Nothing here</div>;
 	}
 	return (
-		<div onClick={() => handleFavoritedVideo(video)} className="favorite-video">
-			<img
-				className="favorite-video__img"
-				src={video.snippet.thumbnails.medium.url}
-				alt="img"
-			/>
-			<div className="favorite-video__title">{video.snippet.title}</div>
-		</div>
+		<React.Fragment>
+			<li className="side-nav__item">
+				<div
+					onClick={() => handleFavoritedVideo(video)}
+					className="favorite-video"
+				>
+					<img
+						className="favorite-video__img"
+						src={video.snippet.thumbnails.medium.url}
+						alt="img"
+					/>
+					<div className="favorite-video__title">{video.snippet.title}</div>
+				</div>
+			</li>
+		</React.Fragment>
 	);
 };
 
