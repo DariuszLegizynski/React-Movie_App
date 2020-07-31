@@ -40,6 +40,7 @@ const App = () => {
 	}, []);
 
 	const handleSelectedVideo = (singleRenderedVideo) => {
+		console.log(singleRenderedVideo);
 		setSearchedValue((previous) => ({
 			...previous,
 			selectedVideo: singleRenderedVideo
@@ -47,11 +48,11 @@ const App = () => {
 	};
 
 	const handleFavoritedVideo = (favorited) => {
+		console.log("favorited in App: ", favorited);
 		setSearchedValue((previous) => ({
 			...previous,
 			favoritedVideo: favorited
 		}));
-		console.log(favorited);
 	};
 
 	return (
@@ -60,13 +61,16 @@ const App = () => {
 			<div className="content">
 				<SideBar
 					handleFavoritedVideo={handleFavoritedVideo}
-					video={searchedValue.favoritedVideo}
+					favoritedVideo={searchedValue.favoritedVideo}
 				/>
 
 				<main className="video">
 					<VideoContext.Provider value={handleSelectedVideo}>
 						<FavoriteContext.Provider value={handleFavoritedVideo}>
-							<VideoDetail video={searchedValue.selectedVideo} />
+							<VideoDetail
+								selectedVideo={searchedValue.selectedVideo}
+								favoritedVideo={searchedValue.favoritedVideo}
+							/>
 							<VideoList listOfVideos={searchedValue.videos} />
 						</FavoriteContext.Provider>
 					</VideoContext.Provider>

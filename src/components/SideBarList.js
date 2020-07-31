@@ -1,10 +1,12 @@
+import shortid from "shortid";
+
 const SideBarList = [
 	{
-		key: 1,
+		id: shortid.generate(),
 		title: "Science"
 	},
 	{
-		key: 2,
+		id: shortid.generate(),
 		title: "Cats and Dogs"
 	}
 ];

@@ -7,7 +7,7 @@ import FavoriteItem from "./FavoriteItem";
 import iconSprites from "../images/sprite.svg";
 import "./SideBar.css";
 
-const SideBar = ({ video, handleFavoritedVideo }) => {
+const SideBar = ({ favoritedVideo, handleFavoritedVideo }) => {
 	const [ lists, setLists ] = useState([]);
 	const [ favorite, setFavorite ] = useState([]);
 
@@ -34,7 +34,7 @@ const SideBar = ({ video, handleFavoritedVideo }) => {
 
 	const addFavorite = (newFavorite) => {
 		setFavorite((prevFavorite) => {
-			return [ ...prevFavorite, newFavorite ];
+			return [ newFavorite, ...prevFavorite ];
 		});
 	};
 
@@ -50,11 +50,7 @@ const SideBar = ({ video, handleFavoritedVideo }) => {
 									<use href={iconSprites + "#icon-list"} />
 								</svg>
 								<span className="side-nav__span">{list.title}</span>
-								<DeleteList
-									key={list.key}
-									id={list.key}
-									onDelete={deleteList}
-								/>
+								<DeleteList id={list.id} onDelete={deleteList} />
 							</div>
 						</li>
 					);
@@ -68,32 +64,28 @@ const SideBar = ({ video, handleFavoritedVideo }) => {
 									<use href={iconSprites + "#icon-list"} />
 								</svg>
 								<span className="side-nav__span">{newList.title}</span>
-								{favorite.map((newFavorite) => {
-									return (
-										<li className="favorite-list">
-											<img
-												className="video-item__img"
-												src={
-													newFavorite.snippet.thumbnails.medium
-														.url
-												}
-												alt="img"
-											/>
-											<span>{newFavorite.title}</span>
-										</li>
-									);
-								})}
-								<FavoriteItem
-									addFavorite={addFavorite}
-									video={video}
-									handleFavoritedVideo={handleFavoritedVideo}
-								/>
-								<DeleteList
-									key={index}
-									id={index}
-									onDelete={deleteList}
-								/>
+
+								<DeleteList id={index} onDelete={deleteList} />
 							</div>
+							{favorite.map((newFavorite) => {
+								return (
+									<li className="favorite-list">
+										<img
+											className="video-item__img"
+											src={
+												newFavorite.snippet.thumbnails.medium.url
+											}
+											alt="img"
+										/>
+										<span>{newFavorite.title}</span>
+									</li>
+								);
+							})}
+							<FavoriteItem
+								addFavorite={addFavorite}
+								favoritedVideo={favoritedVideo}
+								handleFavoritedVideo={handleFavoritedVideo}
+							/>
 						</li>
 					);
 				})}
