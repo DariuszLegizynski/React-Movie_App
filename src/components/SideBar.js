@@ -7,7 +7,7 @@ import FavoriteItem from "./FavoriteItem";
 import iconSprites from "../images/sprite.svg";
 import "./SideBar.css";
 
-const SideBar = ({ favoritedVideo, handleFavoritedVideo }) => {
+const SideBar = ({ favoritedVideo, handleSelectedFavorite }) => {
 	const [ lists, setLists ] = useState([]);
 	const [ favorite, setFavorite ] = useState([]);
 
@@ -84,7 +84,7 @@ const SideBar = ({ favoritedVideo, handleFavoritedVideo }) => {
 							<FavoriteItem
 								addFavorite={addFavorite}
 								favoritedVideo={favoritedVideo}
-								handleFavoritedVideo={handleFavoritedVideo}
+								handleSelectedFavorite={handleSelectedFavorite}
 							/>
 						</li>
 					);

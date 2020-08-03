@@ -15,8 +15,10 @@ const App = () => {
 		videos: [],
 		selectedVideo: null
 	});
+	//added clickedFavoritedVideo to handle the click at the favoriteItem
 	const [ favoritedItem, setFavoritedItem ] = useState({
-		favoritedVideo: null
+		favoritedVideo: null,
+		clickedFavoritedVideo: null
 	});
 
 	const API_KEY = process.env.REACT_APP_API_KEY;
@@ -55,13 +57,20 @@ const App = () => {
 		}));
 	};
 
+	const handleSelectedFavorite = (renderFavorite) => {
+		setFavoritedItem((previous) => ({
+			...previous,
+			clickedFavoritedVideo: renderFavorite
+		}));
+	};
+
 	return (
 		<div className="container">
 			<NavBar handleSearch={handleSearch} />
 			<div className="content">
 				<SideBar
-					handleFavoritedVideo={handleFavoritedVideo}
 					favoritedVideo={favoritedItem.favoritedVideo}
+					handleSelectedFavorite={handleSelectedFavorite}
 				/>
 
 				<main className="video">
@@ -69,8 +78,9 @@ const App = () => {
 						<FavoriteContext.Provider value={handleFavoritedVideo}>
 							<VideoDetail
 								selectedVideo={searchedValue.selectedVideo}
-								// handleFavoritedVideo={handleFavoritedVideo}
-								favoritedVideo={favoritedItem.favoritedVideo}
+								clickedFavoritedVideo={
+									favoritedItem.clickedFavoritedVideo
+								}
 							/>
 							<VideoList listOfVideos={searchedValue.videos} />
 						</FavoriteContext.Provider>

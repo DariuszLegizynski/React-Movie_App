@@ -2,22 +2,19 @@ import React from "react";
 
 import "./VideoDetail.css";
 
-const VideoDetail = ({ selectedVideo, favoritedVideo }) => {
+const VideoDetail = ({ selectedVideo, clickedFavoritedVideo }) => {
 	if (!selectedVideo) {
 		return <div>Loading...</div>;
 	}
-	if (!favoritedVideo) {
-		favoritedVideo = selectedVideo;
+	if (!clickedFavoritedVideo) {
+		clickedFavoritedVideo = selectedVideo;
 	}
-	// if (selectedVideo !== favoritedVideo) {
-	// 	favoritedVideo = selectedVideo;
-	// }
-	// else if (selectedVideo !== favoritedVideo) {
-	// 	return selectedVideo;
+	// if (clickedFavoritedVideo !== selectedVideo) {
+	// 	selectedVideo = clickedFavoritedVideo;
 	// }
 
 	console.log("selectedVideo in viedoDetail: ", selectedVideo);
-	console.log("favoritedVideo in videoDetail: ", favoritedVideo);
+	console.log("favoritedVideo in videoDetail: ", clickedFavoritedVideo);
 
 	const selectedSrc = "https://www.youtube.com/embed/" + selectedVideo.id.videoId;
 	// const favoritedSrc = "https://www.youtube.com/embed/" + favoritedVideo.id.videoId;
