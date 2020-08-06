@@ -2,6 +2,8 @@ import React from "react";
 
 import "./VideoDetail.css";
 
+let oldSelectedVideo = null;
+
 const VideoDetail = ({ selectedVideo, clickedFavoritedVideo }) => {
 	if (!selectedVideo) {
 		return <div>Loading...</div>;
@@ -9,12 +11,25 @@ const VideoDetail = ({ selectedVideo, clickedFavoritedVideo }) => {
 	if (!clickedFavoritedVideo) {
 		clickedFavoritedVideo = selectedVideo;
 	}
-	// if (clickedFavoritedVideo !== selectedVideo) {
-	// 	selectedVideo = clickedFavoritedVideo;
-	// }
+	console.log("selectedVideo in viedoDetail before: ", selectedVideo);
+	console.log("favoritedVideo in videoDetail before: ", clickedFavoritedVideo);
+	if (clickedFavoritedVideo !== selectedVideo) {
+		console.log("oldSelectedVideo, before: ", oldSelectedVideo);
+		if (oldSelectedVideo === null) {
+			console.log("oldSelectedVideo, selectedVideo: ", oldSelectedVideo);
 
-	console.log("selectedVideo in viedoDetail: ", selectedVideo);
-	console.log("favoritedVideo in videoDetail: ", clickedFavoritedVideo);
+			oldSelectedVideo = selectedVideo;
+		} else if (oldSelectedVideo !== selectedVideo) {
+			oldSelectedVideo = selectedVideo;
+		} else {
+			console.log("oldSelectedVideo, favoritedVideo: ", oldSelectedVideo);
+
+			selectedVideo = clickedFavoritedVideo;
+		}
+	}
+
+	console.log("selectedVideo in viedoDetail after: ", selectedVideo);
+	console.log("favoritedVideo in videoDetail after: ", clickedFavoritedVideo);
 
 	const selectedSrc = "https://www.youtube.com/embed/" + selectedVideo.id.videoId;
 	// const favoritedSrc = "https://www.youtube.com/embed/" + favoritedVideo.id.videoId;
