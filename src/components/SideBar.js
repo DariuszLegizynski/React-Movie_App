@@ -9,7 +9,6 @@ import "./SideBar.css";
 
 const SideBar = ({ favoritedVideo, handleSelectedFavorite }) => {
 	const [ lists, setLists ] = useState([]);
-	const [ favorite, setFavorite ] = useState([]);
 
 	const addList = (newList) => {
 		setLists((prevLists) => {
@@ -29,12 +28,6 @@ const SideBar = ({ favoritedVideo, handleSelectedFavorite }) => {
 			return prevLists.filter((listItem, index) => {
 				return index !== id;
 			});
-		});
-	};
-
-	const addFavorite = (newFavorite) => {
-		setFavorite((prevFavorite) => {
-			return [ newFavorite, ...prevFavorite ];
 		});
 	};
 
@@ -67,22 +60,8 @@ const SideBar = ({ favoritedVideo, handleSelectedFavorite }) => {
 
 								<DeleteList id={index} onDelete={deleteList} />
 							</div>
-							{favorite.map((newFavorite) => {
-								return (
-									<li className="favorite-list">
-										<img
-											className="video-item__img"
-											src={
-												newFavorite.snippet.thumbnails.medium.url
-											}
-											alt="img"
-										/>
-										<span>{newFavorite.title}</span>
-									</li>
-								);
-							})}
+
 							<FavoriteItem
-								addFavorite={addFavorite}
 								favoritedVideo={favoritedVideo}
 								handleSelectedFavorite={handleSelectedFavorite}
 							/>

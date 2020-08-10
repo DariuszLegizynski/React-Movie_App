@@ -1,6 +1,6 @@
 import React from "react";
 
-const FavoriteItem = ({ favoritedVideo, handleSelectedFavorite, addFavorite }) => {
+const FavoriteItem = ({ favoritedVideo, handleSelectedFavorite }) => {
 	if (!favoritedVideo) {
 		return <div>Choose your favorite video</div>;
 	}
