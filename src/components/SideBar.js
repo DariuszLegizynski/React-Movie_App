@@ -7,7 +7,9 @@ import FavoriteItem from "./FavoriteItem";
 import iconSprites from "../images/sprite.svg";
 import "./SideBar.css";
 
-const SideBar = ({ favoritedVideo, handleSelectedFavorite }) => {
+const SideBar = ({ favoritedVideo, handleSelectedFavorite, favoritedList }) => {
+	console.log("favoritedList in SideBar: ", favoritedList);
+
 	const [ lists, setLists ] = useState([]);
 
 	const addList = (newList) => {
@@ -60,14 +62,30 @@ const SideBar = ({ favoritedVideo, handleSelectedFavorite }) => {
 
 								<DeleteList id={index} onDelete={deleteList} />
 							</div>
-
-							<FavoriteItem
-								favoritedVideo={favoritedVideo}
-								handleSelectedFavorite={handleSelectedFavorite}
-							/>
 						</li>
 					);
 				})}
+				{favoritedList.map((newFavoritedList) => {
+					return (
+						<div // onClick={() => videoContext(newFavoritedList)}
+						className="video-item__container">
+							<img
+								className="video-item__img"
+								src={newFavoritedList.snippet.thumbnails.high.url}
+								alt="img"
+							/>
+
+							<div className="video-item__content">
+								{newFavoritedList.snippet.title}
+							</div>
+						</div>
+					);
+				})}
+
+				<FavoriteItem
+					favoritedVideo={favoritedVideo}
+					handleSelectedFavorite={handleSelectedFavorite}
+				/>
 				<CreateNewList onAdd={addList} />
 			</ul>
 

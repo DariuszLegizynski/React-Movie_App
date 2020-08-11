@@ -20,6 +20,7 @@ const App = () => {
 		favoritedVideo: null,
 		clickedFavoritedVideo: null
 	});
+	const [ favoritedList, setFavoritedList ] = useState([]);
 
 	const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -50,18 +51,17 @@ const App = () => {
 		}));
 	};
 
-	const handleFavoritedVideo = (favorited) => {
-		setFavoritedItem((previous) => ({
-			...previous,
-			favoritedVideo: favorited
-		}));
-	};
-
 	const handleSelectedFavorite = (renderFavorite) => {
 		setFavoritedItem((previous) => ({
 			...previous,
 			clickedFavoritedVideo: renderFavorite
 		}));
+	};
+
+	const handleFavoritedVideo = (favoritedItem) => {
+		setFavoritedList((previousFavorited) => {
+			return [ favoritedItem, ...previousFavorited ];
+		});
 	};
 
 	return (
@@ -71,6 +71,7 @@ const App = () => {
 				<SideBar
 					favoritedVideo={favoritedItem.favoritedVideo}
 					handleSelectedFavorite={handleSelectedFavorite}
+					favoritedList={favoritedList}
 				/>
 
 				<main className="video">
