@@ -7,7 +7,7 @@ import FavoriteItem from "./FavoriteItem";
 import iconSprites from "../images/sprite.svg";
 import "./SideBar.css";
 
-const SideBar = ({ handleSelectedFavorite, favoritedList }) => {
+const SideBar = ({ handleSelectedFavorite, favoritedList, onDeleteFavorited }) => {
 	const [ lists, setLists ] = useState([]);
 
 	const addList = (newList) => {
@@ -57,13 +57,15 @@ const SideBar = ({ handleSelectedFavorite, favoritedList }) => {
 									<use href={iconSprites + "#icon-list"} />
 								</svg>
 								<span className="side-nav__span">{newList.title}</span>
-								{favoritedList.map((newFavoritedList) => {
+								{favoritedList.map((newFavoritedList, id) => {
 									return (
 										<FavoriteItem
 											newFavoritedList={newFavoritedList}
 											handleSelectedFavorite={
 												handleSelectedFavorite
 											}
+											onDeleteFavorited={onDeleteFavorited}
+											id={id}
 										/>
 									);
 								})}

@@ -1,6 +1,12 @@
 import React from "react";
+import DeleteFavorited from "./DeleteFavorited";
 
-const FavoriteItem = ({ newFavoritedList, handleSelectedFavorite }) => {
+const FavoriteItem = ({
+	newFavoritedList,
+	handleSelectedFavorite,
+	onDeleteFavorited,
+	id
+}) => {
 	if (!newFavoritedList) {
 		return <div>Choose your favorite video</div>;
 	}
@@ -20,6 +26,7 @@ const FavoriteItem = ({ newFavoritedList, handleSelectedFavorite }) => {
 						{newFavoritedList.snippet.title}
 					</div>
 				</div>
+				<DeleteFavorited onDeleteFavorited={onDeleteFavorited} id={id} />
 			</div>
 		</React.Fragment>
 	);

@@ -1,10 +1,10 @@
 import React from "react";
 import iconSprites from "../images/sprite.svg";
 
-const DeleteList = (props) => {
-	console.log("props.id: ", props.id);
+const DeleteFavorited = (props) => {
+	console.log("DF props.id: ", props.id);
 	const handleClick = () => {
-		props.onDelete(props.id);
+		props.onDeleteFavorited(props.id);
 	};
 
 	return (
@@ -18,4 +18,4 @@ const DeleteList = (props) => {
 	);
 };
 
-export default DeleteList;
+export default DeleteFavorited;

@@ -64,6 +64,14 @@ const App = () => {
 		});
 	};
 
+	const deleteFavorited = (id) => {
+		setFavoritedList((prevLists) => {
+			return prevLists.filter((listItem, index) => {
+				return index !== id;
+			});
+		});
+	};
+
 	return (
 		<div className="container">
 			<NavBar handleSearch={handleSearch} />
@@ -71,6 +79,7 @@ const App = () => {
 				<SideBar
 					handleSelectedFavorite={handleSelectedFavorite}
 					favoritedList={favoritedList}
+					onDeleteFavorited={deleteFavorited}
 				/>
 
 				<main className="video">
