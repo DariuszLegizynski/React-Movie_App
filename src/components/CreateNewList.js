@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import iconSprites from "../images/sprite.svg";
 
-const CreateNewList = (props) => {
+const CreateNewList = ({ onAdd }) => {
 	const [ list, setList ] = useState({
 		title: ""
 	});
@@ -18,7 +18,7 @@ const CreateNewList = (props) => {
 	};
 
 	const submitNewList = (event) => {
-		props.onAdd(list);
+		onAdd(list);
 		setList({ title: "" });
 		event.preventDefault();
 	};

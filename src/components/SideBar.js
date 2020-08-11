@@ -7,9 +7,7 @@ import FavoriteItem from "./FavoriteItem";
 import iconSprites from "../images/sprite.svg";
 import "./SideBar.css";
 
-const SideBar = ({ favoritedVideo, handleSelectedFavorite, favoritedList }) => {
-	console.log("favoritedList in SideBar: ", favoritedList);
-
+const SideBar = ({ handleSelectedFavorite, favoritedList }) => {
 	const [ lists, setLists ] = useState([]);
 
 	const addList = (newList) => {
@@ -59,34 +57,19 @@ const SideBar = ({ favoritedVideo, handleSelectedFavorite, favoritedList }) => {
 									<use href={iconSprites + "#icon-list"} />
 								</svg>
 								<span className="side-nav__span">{newList.title}</span>
-
+								{favoritedList.map((newFavoritedList) => {
+									return (
+										<FavoriteItem
+											newFavoritedList={newFavoritedList}
+											handleSelectedFavorite={
+												handleSelectedFavorite
+											}
+										/>
+									);
+								})}
 								<DeleteList id={index} onDelete={deleteList} />
 							</div>
 						</li>
-					);
-				})}
-				{/* {favoritedList.map((newFavoritedList) => {
-					return (
-						<div // onClick={() => videoContext(newFavoritedList)}
-						className="video-item__container">
-							<img
-								className="video-item__img"
-								src={newFavoritedList.snippet.thumbnails.high.url}
-								alt="img"
-							/>
-
-							<div className="video-item__content">
-								{newFavoritedList.snippet.title}
-							</div>
-						</div>
-					);
-				})} */}
-				{favoritedList.map((newFavoritedList) => {
-					return (
-						<FavoriteItem
-							newFavoritedList={newFavoritedList}
-							handleSelectedFavorite={handleSelectedFavorite}
-						/>
 					);
 				})}
 

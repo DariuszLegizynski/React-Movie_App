@@ -69,7 +69,6 @@ const App = () => {
 			<NavBar handleSearch={handleSearch} />
 			<div className="content">
 				<SideBar
-					favoritedVideo={favoritedItem.favoritedVideo}
 					handleSelectedFavorite={handleSelectedFavorite}
 					favoritedList={favoritedList}
 				/>
