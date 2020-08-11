@@ -65,7 +65,7 @@ const SideBar = ({ favoritedVideo, handleSelectedFavorite, favoritedList }) => {
 						</li>
 					);
 				})}
-				{favoritedList.map((newFavoritedList) => {
+				{/* {favoritedList.map((newFavoritedList) => {
 					return (
 						<div // onClick={() => videoContext(newFavoritedList)}
 						className="video-item__container">
@@ -80,12 +80,16 @@ const SideBar = ({ favoritedVideo, handleSelectedFavorite, favoritedList }) => {
 							</div>
 						</div>
 					);
+				})} */}
+				{favoritedList.map((newFavoritedList) => {
+					return (
+						<FavoriteItem
+							newFavoritedList={newFavoritedList}
+							handleSelectedFavorite={handleSelectedFavorite}
+						/>
+					);
 				})}
 
-				<FavoriteItem
-					favoritedVideo={favoritedVideo}
-					handleSelectedFavorite={handleSelectedFavorite}
-				/>
 				<CreateNewList onAdd={addList} />
 			</ul>
 

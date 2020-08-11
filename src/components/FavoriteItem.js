@@ -1,23 +1,23 @@
 import React from "react";
 
-const FavoriteItem = ({ favoritedVideo, handleSelectedFavorite }) => {
-	if (!favoritedVideo) {
+const FavoriteItem = ({ newFavoritedList, handleSelectedFavorite }) => {
+	if (!newFavoritedList) {
 		return <div>Choose your favorite video</div>;
 	}
 	return (
 		<React.Fragment>
 			<div className="side-nav__item">
 				<div
-					onClick={() => handleSelectedFavorite(favoritedVideo)}
+					onClick={() => handleSelectedFavorite(newFavoritedList)}
 					className="favorite-video"
 				>
 					<img
 						className="favorite-video__img"
-						src={favoritedVideo.snippet.thumbnails.medium.url}
+						src={newFavoritedList.snippet.thumbnails.medium.url}
 						alt="img"
 					/>
 					<div className="favorite-video__title">
-						{favoritedVideo.snippet.title}
+						{newFavoritedList.snippet.title}
 					</div>
 				</div>
 			</div>
