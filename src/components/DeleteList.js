@@ -1,10 +1,10 @@
 import React from "react";
 import iconSprites from "../images/sprite.svg";
 
-const DeleteList = (props) => {
-	console.log("props.id: ", props.id);
+const DeleteList = ({ id, onDelete }) => {
+	console.log("props.id: ", id);
 	const handleClick = () => {
-		props.onDelete(props.id);
+		onDelete(id);
 	};
 
 	return (

@@ -4,6 +4,8 @@ import CreateNewList from "./CreateNewList";
 import DeleteList from "./DeleteList";
 import FavoriteItem from "./FavoriteItem";
 
+import shortid from "shortid";
+
 import iconSprites from "../images/sprite.svg";
 import "./SideBar.css";
 
@@ -24,6 +26,7 @@ const SideBar = ({ handleSelectedFavorite, favoritedList, onDeleteFavorited }) =
 	//   }
 
 	const deleteList = (id) => {
+		console.log("id in deleteList: ", id);
 		setLists((prevLists) => {
 			return prevLists.filter((listItem, index) => {
 				return index !== id;
@@ -37,7 +40,7 @@ const SideBar = ({ handleSelectedFavorite, favoritedList, onDeleteFavorited }) =
 				{/* //this part gets the lists from the SideBarList.js file */}
 				{SideBarList.map((list) => {
 					return (
-						<li className="side-nav__item">
+						<li key={shortid.generate()} className="side-nav__item">
 							<div className="side-nav__link">
 								<svg className="side-nav__icon">
 									<use href={iconSprites + "#icon-list"} />
@@ -51,7 +54,7 @@ const SideBar = ({ handleSelectedFavorite, favoritedList, onDeleteFavorited }) =
 				{/* //This part keeps track of the newly created lists and also allows to delete them */}
 				{lists.map((newList, index) => {
 					return (
-						<li className="side-nav__item">
+						<li key={shortid.generate()} className="side-nav__item">
 							<div className="side-nav__link">
 								<svg className="side-nav__icon">
 									<use href={iconSprites + "#icon-list"} />
@@ -60,6 +63,7 @@ const SideBar = ({ handleSelectedFavorite, favoritedList, onDeleteFavorited }) =
 								{favoritedList.map((newFavoritedList, id) => {
 									return (
 										<FavoriteItem
+											key={shortid.generate()}
 											newFavoritedList={newFavoritedList}
 											handleSelectedFavorite={
 												handleSelectedFavorite
@@ -75,7 +79,7 @@ const SideBar = ({ handleSelectedFavorite, favoritedList, onDeleteFavorited }) =
 					);
 				})}
 
-				<CreateNewList onAdd={addList} />
+				<CreateNewList key={shortid.generate()} onAdd={addList} />
 			</ul>
 
 			<div className="legal">&copy; 2020 by Readeo. All rights reserved.</div>

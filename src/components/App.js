@@ -17,7 +17,6 @@ const App = () => {
 	});
 	//added clickedFavoritedVideo to handle the click at the favoriteItem
 	const [ favoritedItem, setFavoritedItem ] = useState({
-		favoritedVideo: null,
 		clickedFavoritedVideo: null
 	});
 	const [ favoritedList, setFavoritedList ] = useState([]);
@@ -58,9 +57,9 @@ const App = () => {
 		}));
 	};
 
-	const handleFavoritedVideo = (favoritedItem) => {
+	const handleFavoritedVideo = (favoritedElement) => {
 		setFavoritedList((previousFavorited) => {
-			return [ favoritedItem, ...previousFavorited ];
+			return [ favoritedElement, ...previousFavorited ];
 		});
 	};
 
