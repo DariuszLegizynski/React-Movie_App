@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import SideBarList from "./SideBarList";
 import CreateNewList from "./CreateNewList";
 import DeleteList from "./DeleteList";
-import FavoriteItem from "./FavoriteItem";
+import NewList from "./NewList";
 
 import iconSprites from "../images/sprite.svg";
 import "./SideBar.css";
-import shortid from "shortid";
 
 const SideBar = ({ handleSelectedFavorite, favoritedList, onDeleteFavorited }) => {
 	const year = new Date().getFullYear();
@@ -26,7 +25,7 @@ const SideBar = ({ handleSelectedFavorite, favoritedList, onDeleteFavorited }) =
 	//     }
 	//   }
 
-	const deleteList = (id) => {
+	const onDeleteList = (id) => {
 		setLists((prevLists) => {
 			return prevLists.filter((listItem, index) => {
 				return index !== id;
@@ -46,7 +45,7 @@ const SideBar = ({ handleSelectedFavorite, favoritedList, onDeleteFavorited }) =
 									<use href={iconSprites + "#icon-list"} />
 								</svg>
 								<span className="side-nav__span">{list.title}</span>
-								<DeleteList id={list.id} onDelete={deleteList} />
+								<DeleteList id={list.id} onDelete={onDeleteList} />
 							</div>
 						</li>
 					);
@@ -54,30 +53,14 @@ const SideBar = ({ handleSelectedFavorite, favoritedList, onDeleteFavorited }) =
 				{/* //This part keeps track of the newly created lists and also allows to delete them */}
 				{lists.map((newList, index) => {
 					return (
-						<li key={newList.id} className="side-nav__item">
-							<div className="side-nav__link">
-								<svg className="side-nav__icon">
-									<use href={iconSprites + "#icon-list"} />
-								</svg>
-								<span className="side-nav__span">{newList.title}</span>
-								<DeleteList id={index} onDelete={deleteList} />
-							</div>
-							<div className="side-nav__favorited-list">
-								{favoritedList.map((newFavoritedList, id) => {
-									return (
-										<FavoriteItem
-											key={shortid.generate()}
-											id={id}
-											newFavoritedList={newFavoritedList}
-											handleSelectedFavorite={
-												handleSelectedFavorite
-											}
-											onDeleteFavorited={onDeleteFavorited}
-										/>
-									);
-								})}
-							</div>
-						</li>
+						<NewList
+							newList={newList}
+							index={index}
+							onDelete={onDeleteList}
+							handleSelectedFavorite={handleSelectedFavorite}
+							favoritedList={favoritedList}
+							onDeleteFavorited={onDeleteFavorited}
+						/>
 					);
 				})}
 
