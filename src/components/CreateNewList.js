@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import iconSprites from "../images/sprite.svg";
+import shortid from "shortid";
 
 const CreateNewList = ({ onAdd }) => {
 	const [ list, setList ] = useState({
+		id: shortid.generate(),
 		title: ""
 	});
 
@@ -18,7 +20,8 @@ const CreateNewList = ({ onAdd }) => {
 	};
 
 	const submitNewList = (event) => {
-		onAdd(list);
+		//below I should add the id: shortId.generate();
+		onAdd({ id: shortid.generate(), ...list });
 		setList({ title: "" });
 		event.preventDefault();
 	};

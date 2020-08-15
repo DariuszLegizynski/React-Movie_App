@@ -1,6 +1,8 @@
 import React from "react";
 import DeleteFavorited from "./DeleteFavorited";
 
+import "./FavoritedItem.css";
+
 const FavoriteItem = ({
 	newFavoritedList,
 	handleSelectedFavorite,
@@ -8,27 +10,25 @@ const FavoriteItem = ({
 	id
 }) => {
 	if (!newFavoritedList) {
-		return <div>Choose your favorite video</div>;
+		return <div className="favorite-item__loading">Choose your favorite video</div>;
 	}
 	return (
-		<React.Fragment>
-			<div className="side-nav__item">
-				<div
-					onClick={() => handleSelectedFavorite(newFavoritedList)}
-					className="favorite-video"
-				>
-					<img
-						className="favorite-video__img"
-						src={newFavoritedList.snippet.thumbnails.medium.url}
-						alt="img"
-					/>
-					<div className="favorite-video__title">
-						{newFavoritedList.snippet.title}
-					</div>
+		<div className="favorite-item">
+			<div
+				onClick={() => handleSelectedFavorite(newFavoritedList)}
+				className="favorite-item__btn-selected"
+			>
+				<img
+					className="favorite-item__img"
+					src={newFavoritedList.snippet.thumbnails.medium.url}
+					alt="img"
+				/>
+				<div className="favorite-item__title">
+					{newFavoritedList.snippet.title}
 				</div>
-				<DeleteFavorited onDeleteFavorited={onDeleteFavorited} id={id} />
 			</div>
-		</React.Fragment>
+			<DeleteFavorited onDeleteFavorited={onDeleteFavorited} id={id} />
+		</div>
 	);
 };
 

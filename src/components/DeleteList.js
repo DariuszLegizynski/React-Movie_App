@@ -2,7 +2,7 @@ import React from "react";
 import iconSprites from "../images/sprite.svg";
 
 const DeleteList = ({ id, onDelete }) => {
-	console.log("props.id: ", id);
+	console.log("id from DeleteList: ", id);
 	const handleClick = () => {
 		onDelete(id);
 	};

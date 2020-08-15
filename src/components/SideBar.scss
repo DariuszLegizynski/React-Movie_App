@@ -7,6 +7,11 @@
 	list-style: none;
 	margin-top: 2rem;
 
+	&__favorited-list {
+		display: grid;
+		grid-auto-rows: 1fr;
+	}
+
 	&__item {
 		position: relative;
 

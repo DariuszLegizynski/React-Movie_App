@@ -7,6 +7,12 @@
   margin-top: 2rem;
 }
 
+.side-nav__favorited-list {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: 1fr;
+}
+
 .side-nav__item {
   position: relative;
 }

@@ -1,0 +1,41 @@
+@import "../styles/variables";
+
+.favorite-item {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	padding: .5rem;
+
+	&__btn-selected {
+		display: flex;
+		margin: .5rem;
+	}
+
+	&__img {
+		width: 40%;
+	}
+
+	&__title {
+		flex: 1;
+		padding: 1rem;
+		font-size: .8rem;
+		text-align: left;
+		background-color: $color-grey-dark-1;
+		color: $color-grey-light-1;
+	}
+
+	&__icon--trash {
+		height: 2.5rem;
+		width: 2.5rem;
+
+		z-index: 50;
+		fill: $color-grey-dark-1;
+
+		&:focus,
+		&:hover {
+			transform: scale(1.2);
+			outline: none;
+		}
+	}
+}
