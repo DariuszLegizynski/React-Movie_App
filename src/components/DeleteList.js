@@ -9,8 +9,8 @@ const DeleteList = ({ id, onDelete }) => {
 
 	return (
 		<React.Fragment>
-			<button onClick={handleClick} className="side-nav__btn-minus btn">
-				<svg className="side-nav__icon-minus">
+			<button onClick={handleClick} className="new-list__btn-minus btn">
+				<svg className="new-list__icon-minus">
 					<use href={iconSprites + "#icon-circle-with-minus"} />
 				</svg>
 			</button>

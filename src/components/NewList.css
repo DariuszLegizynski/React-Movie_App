@@ -1,1 +1,101 @@
-/* No CSS *//*# sourceMappingURL=NewList.css.map */
+.new-list__favorite-list {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: 1fr;
+}
+
+.new-list__item {
+  position: relative;
+}
+
+.new-list__item:not(:last-child) {
+  margin-bottom: .5rem;
+}
+
+.new-list__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #defcf9;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transition: width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s, -webkit-transform 0.2s;
+  transition: width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s, -webkit-transform 0.2s;
+  transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s;
+  transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s, -webkit-transform 0.2s;
+}
+
+.new-list__item:hover::before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  width: 100%;
+  z-index: -1;
+}
+
+.new-list__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.new-list__link:link, .new-list__link:visited {
+  color: #777;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  padding: 1rem 3rem;
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.new-list__icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: 0 1rem;
+  fill: currentColor;
+}
+
+.new-list__icon-minus {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: currentColor;
+}
+
+.new-list__btn-minus {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.new-list__input {
+  width: auto;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #f4f2f2;
+  border: none;
+  border-radius: 1rem;
+  padding-left: .7rem;
+  margin: .7rem 1rem .7rem 0;
+}
+
+.new-list__input::-webkit-input-placeholder {
+  font-weight: 100;
+  color: #999;
+}
+
+.new-list__span {
+  padding-left: .7rem;
+  margin: .7rem 0;
+}
+/*# sourceMappingURL=NewList.css.map */

@@ -39,12 +39,12 @@ const SideBar = ({ handleSelectedFavorite, favoritedList, onDeleteFavorited }) =
 				{/* //this part gets the lists from the SideBarList.js file */}
 				{SideBarList.map((list) => {
 					return (
-						<li key={list.key} className="side-nav__item">
-							<div className="side-nav__link">
-								<svg className="side-nav__icon">
+						<li key={list.key} className="new-list__item">
+							<div className="new-list__link">
+								<svg className="new-list__icon">
 									<use href={iconSprites + "#icon-list"} />
 								</svg>
-								<span className="side-nav__span">{list.title}</span>
+								<span className="new-list__span">{list.title}</span>
 								<DeleteList id={list.id} onDelete={onDeleteList} />
 							</div>
 						</li>

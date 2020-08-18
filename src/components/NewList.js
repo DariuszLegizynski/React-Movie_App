@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import DeleteList from "./DeleteList";
 import FavoriteItem from "./FavoriteItem";
 
@@ -15,34 +15,38 @@ const NewList = ({
 	favoritedList,
 	onDeleteFavorited
 }) => {
+	const [ isOpen, setIsOpen ] = useState(false);
+
 	return (
 		<ul className="new-list">
-			<li key={newList.id} className="side-nav__item">
-				<input type="checkbox" className="side-nav__checkbox" id="list-toggle" />
-				<label htmlFor="list-toggle" className="side-nav__button">
-					MENU
-				</label>
-				<div className="side-nav__background">&nbsp;</div>
-				<div className="side-nav__link">
-					<svg className="side-nav__icon">
-						<use href={iconSprites + "#icon-list"} />
-					</svg>
-					<span className="side-nav__span">{newList.title}</span>
+			<li key={newList.id} className="new-list__item">
+				<div className="new-list__link">
+					<div
+						className="new-list__accordion"
+						onClick={() => setIsOpen(!isOpen)}
+					>
+						<svg className="new-list__icon">
+							<use href={iconSprites + "#icon-list"} />
+						</svg>
+						<span className="new-list__span">{newList.title}</span>
+					</div>
 					<DeleteList id={index} onDelete={onDelete} />
 				</div>
-				<div className="side-nav__favorited-list">
-					{favoritedList.map((newFavoritedList, id) => {
-						return (
-							<FavoriteItem
-								key={shortid.generate()}
-								id={id}
-								newFavoritedList={newFavoritedList}
-								handleSelectedFavorite={handleSelectedFavorite}
-								onDeleteFavorited={onDeleteFavorited}
-							/>
-						);
-					})}
-				</div>
+				{isOpen && (
+					<ul className="new-list__favorite-list">
+						{favoritedList.map((newFavoritedList, id) => {
+							return (
+								<FavoriteItem
+									key={shortid.generate()}
+									id={id}
+									newFavoritedList={newFavoritedList}
+									handleSelectedFavorite={handleSelectedFavorite}
+									onDeleteFavorited={onDeleteFavorited}
+								/>
+							);
+						})}
+					</ul>
+				)}
 			</li>
 		</ul>
 	);

@@ -13,7 +13,7 @@ const FavoriteItem = ({
 		return <div className="favorite-item__loading">Choose your favorite video</div>;
 	}
 	return (
-		<div className="favorite-item">
+		<li className="favorite-item">
 			<div
 				onClick={() => handleSelectedFavorite(newFavoritedList)}
 				className="favorite-item__btn-selected"
@@ -28,7 +28,7 @@ const FavoriteItem = ({
 				</div>
 			</div>
 			<DeleteFavorited onDeleteFavorited={onDeleteFavorited} id={id} />
-		</div>
+		</li>
 	);
 };
 
