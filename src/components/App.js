@@ -23,6 +23,31 @@ const App = () => {
 
 	const API_KEY = process.env.REACT_APP_API_KEY;
 
+	const [ lists, setLists ] = useState([]);
+
+	const addList = (newList) => {
+		setLists((prevLists) => {
+			return [ ...prevLists, newList ];
+		});
+	};
+
+	console.log({ lists });
+
+	//to prevent creating empty lists objects
+	// const addList = ({title}) =>  {
+	//     if(title.length > 0) {
+	//       setLists(prev => [{title},...prev]);
+	//     }
+	//   }
+
+	const onDeleteList = (id) => {
+		setLists((prevLists) => {
+			return prevLists.filter((listItem, index) => {
+				return index !== id;
+			});
+		});
+	};
+
 	const handleSearch = async (inputText) => {
 		const response = await youtube.get("/search", {
 			params: {
@@ -76,8 +101,11 @@ const App = () => {
 			<NavBar handleSearch={handleSearch} />
 			<div className="content">
 				<SideBar
+					addList={addList}
+					lists={lists}
 					handleSelectedFavorite={handleSelectedFavorite}
 					favoritedList={favoritedList}
+					onDeleteList={onDeleteList}
 					onDeleteFavorited={deleteFavorited}
 				/>
 
@@ -90,7 +118,10 @@ const App = () => {
 									favoritedItem.clickedFavoritedVideo
 								}
 							/>
-							<VideoList listOfVideos={searchedValue.videos} />
+							<VideoList
+								listOfVideos={searchedValue.videos}
+								lists={lists}
+							/>
 						</FavoriteContext.Provider>
 					</VideoContext.Provider>
 				</main>

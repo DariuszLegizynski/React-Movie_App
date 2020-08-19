@@ -10,7 +10,7 @@ import "./NewList.css";
 const NewList = ({
 	newList,
 	index,
-	onDelete,
+	onDeleteList,
 	handleSelectedFavorite,
 	favoritedList,
 	onDeleteFavorited
@@ -30,7 +30,7 @@ const NewList = ({
 						</svg>
 						<span className="new-list__span">{newList.title}</span>
 					</div>
-					<DeleteList id={index} onDelete={onDelete} />
+					<DeleteList id={index} onDeleteList={onDeleteList} />
 				</div>
 				{isOpen && (
 					<ul className="new-list__favorite-list">

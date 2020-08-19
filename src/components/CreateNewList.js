@@ -9,20 +9,19 @@ const CreateNewList = ({ onAdd }) => {
 	});
 
 	const handleChange = (event) => {
-		const { name, value } = event.target;
+		const { value } = event.target;
 
 		setList((prevList) => {
 			return {
 				...prevList,
-				[name]: value
+				title: value
 			};
 		});
 	};
 
 	const submitNewList = (event) => {
-		//below I should add the id: shortId.generate();
-		onAdd({ id: shortid.generate(), ...list });
-		setList({ title: "" });
+		onAdd({ ...list });
+		setList({ id: shortid.generate(), title: "" });
 		event.preventDefault();
 	};
 

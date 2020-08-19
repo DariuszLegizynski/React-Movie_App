@@ -1,10 +1,9 @@
 import React from "react";
 import iconSprites from "../images/sprite.svg";
 
-const DeleteList = ({ id, onDelete }) => {
-	console.log("id from DeleteList: ", id);
+const DeleteList = ({ id, onDeleteList }) => {
 	const handleClick = () => {
-		onDelete(id);
+		onDeleteList(id);
 	};
 
 	return (

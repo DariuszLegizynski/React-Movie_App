@@ -1,13 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { VideoContext, FavoriteContext } from "./App";
 import { Link } from "react-scroll";
+import Select from "react-select";
 
 import "./VideoItem.css";
 import iconSprites from "../images/sprite.svg";
 
-const VideoItem = ({ singleRenderedVideo }) => {
+const VideoItem = ({ singleRenderedVideo, lists }) => {
 	const videoContext = useContext(VideoContext);
 	const favoriteContext = useContext(FavoriteContext);
+
+	const [ chosenList, setChosenList ] = useState([]);
+
+	const optionLists = lists.map(({ id, title }) => ({ value: id, label: title }));
 
 	return (
 		<div className="video-item">
@@ -39,6 +44,15 @@ const VideoItem = ({ singleRenderedVideo }) => {
 				onClick={() => favoriteContext(singleRenderedVideo)}
 				className="video-item__btn--favorite btn"
 			>
+				<Select
+					options={optionLists}
+					isMulti
+					autoFocus
+					isSearchable
+					onChange={setChosenList}
+					placeholder="Select favorite list"
+					noOptionsMessage={() => "Please create a favorite list first"}
+				/>
 				<svg className="video-item__icon--favorite">
 					<use href={iconSprites + "#icon-star"} />
 				</svg>

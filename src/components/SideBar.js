@@ -1,37 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import SideBarList from "./SideBarList";
 import CreateNewList from "./CreateNewList";
 import DeleteList from "./DeleteList";
 import NewList from "./NewList";
 
+import shortid from "shortid";
+
 import iconSprites from "../images/sprite.svg";
 import "./SideBar.css";
 
-const SideBar = ({ handleSelectedFavorite, favoritedList, onDeleteFavorited }) => {
+const SideBar = ({
+	handleSelectedFavorite,
+	favoritedList,
+	onDeleteFavorited,
+	addList,
+	lists,
+	onDeleteList
+}) => {
 	const year = new Date().getFullYear();
-
-	const [ lists, setLists ] = useState([]);
-
-	const addList = (newList) => {
-		setLists((prevLists) => {
-			return [ ...prevLists, newList ];
-		});
-	};
-
-	//to prevent creating empty lists objects
-	// const addList = ({title}) =>  {
-	//     if(title.length > 0) {
-	//       setLists(prev => [{title},...prev]);
-	//     }
-	//   }
-
-	const onDeleteList = (id) => {
-		setLists((prevLists) => {
-			return prevLists.filter((listItem, index) => {
-				return index !== id;
-			});
-		});
-	};
 
 	return (
 		<nav className="sidebar">
@@ -45,7 +31,7 @@ const SideBar = ({ handleSelectedFavorite, favoritedList, onDeleteFavorited }) =
 									<use href={iconSprites + "#icon-list"} />
 								</svg>
 								<span className="new-list__span">{list.title}</span>
-								<DeleteList id={list.id} onDelete={onDeleteList} />
+								<DeleteList id={list.id} onDeleteList={onDeleteList} />
 							</div>
 						</li>
 					);
@@ -54,9 +40,10 @@ const SideBar = ({ handleSelectedFavorite, favoritedList, onDeleteFavorited }) =
 				{lists.map((newList, index) => {
 					return (
 						<NewList
+							key={shortid.generate()}
 							newList={newList}
 							index={index}
-							onDelete={onDeleteList}
+							onDeleteList={onDeleteList}
 							handleSelectedFavorite={handleSelectedFavorite}
 							favoritedList={favoritedList}
 							onDeleteFavorited={onDeleteFavorited}
