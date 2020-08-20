@@ -15,7 +15,6 @@ const App = () => {
 		videos: [],
 		selectedVideo: null
 	});
-	console.log({ searchedValue });
 
 	//added clickedFavoritedVideo to handle the click at the favoriteItem
 	const [ favoritedItem, setFavoritedItem ] = useState({
@@ -32,8 +31,6 @@ const App = () => {
 			return [ ...prevLists, newList ];
 		});
 	};
-
-	console.log({ lists });
 
 	//to prevent creating empty lists objects
 	// const addList = ({title}) =>  {

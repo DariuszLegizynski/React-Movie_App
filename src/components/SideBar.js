@@ -18,7 +18,6 @@ const SideBar = ({
 	onDeleteList
 }) => {
 	const year = new Date().getFullYear();
-	console.log({ favoritedList });
 	return (
 		<nav className="sidebar">
 			<ul className="side-nav">
