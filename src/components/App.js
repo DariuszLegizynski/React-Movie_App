@@ -15,11 +15,13 @@ const App = () => {
 		videos: [],
 		selectedVideo: null
 	});
+	console.log({ searchedValue });
+
 	//added clickedFavoritedVideo to handle the click at the favoriteItem
 	const [ favoritedItem, setFavoritedItem ] = useState({
 		clickedFavoritedVideo: null
 	});
-	const [ favoritedList, setFavoritedList ] = useState({ favoritedVideos: [] });
+	const [ favoritedList, setFavoritedList ] = useState([]);
 
 	const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -83,23 +85,11 @@ const App = () => {
 		}));
 	};
 
-	// const handleFavoritedVideo = (favoritedElement) => {
-	// 	console.log({ favoritedElement });
-	// 	setFavoritedList((previousFavorited) => {
-	// 		console.log({ previousFavorited });
-	// 		return [ favoritedElement, ...previousFavorited ];
-	// 	});
-	// };
-
 	const handleFavoritedVideo = (favoritedElement) => {
-		console.log({ favoritedElement });
-		setFavoritedList(({ favoritedVideos: previousFavorited }) => {
-			console.log({ previousFavorited });
+		setFavoritedList((previousFavorited) => {
 			return [ favoritedElement, ...previousFavorited ];
 		});
 	};
-
-	console.log({ favoritedList });
 
 	const deleteFavorited = (id) => {
 		setFavoritedList((prevLists) => {

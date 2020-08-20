@@ -5,6 +5,7 @@ import "./VideoList.css";
 
 const VideoList = ({ listOfVideos, lists }) => {
 	const renderedListOfVideos = listOfVideos.map((video) => {
+		console.log({ listOfVideos });
 		return (
 			<VideoItem key={video.id.videoId} singleRenderedVideo={video} lists={lists} />
 		);
