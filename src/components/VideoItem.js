@@ -6,7 +6,7 @@ import Select from "react-select";
 import "./VideoItem.css";
 import iconSprites from "../images/sprite.svg";
 
-const VideoItem = ({ singleRenderedVideo, lists }) => {
+const VideoItem = ({ singleRenderedVideo, lists, onChosenList }) => {
 	const videoContext = useContext(VideoContext);
 	const favoriteContext = useContext(FavoriteContext);
 
@@ -43,7 +43,10 @@ const VideoItem = ({ singleRenderedVideo, lists }) => {
 					options={optionLists}
 					autoFocus
 					isSearchable
-					onChange={() => favoriteContext(singleRenderedVideo)}
+					onChange={(optionLists) => {
+						favoriteContext(singleRenderedVideo);
+						onChosenList(optionLists.label);
+					}}
 					placeholder="Select favorite list"
 					noOptionsMessage={() => "Please create a favorite list first"}
 				/>
@@ -56,21 +59,3 @@ const VideoItem = ({ singleRenderedVideo, lists }) => {
 };
 
 export default VideoItem;
-
-// <button
-// 				onClick={() => favoriteContext(singleRenderedVideo)}
-// 				className="video-item__btn--favorite btn"
-// 			>
-// 				<Select
-// 					options={optionLists}
-// 					isMulti
-// 					autoFocus
-// 					isSearchable
-// 					onChange={setChosenList}
-// 					placeholder="Select favorite list"
-// 					noOptionsMessage={() => "Please create a favorite list first"}
-// 				/>
-// 				<svg className="video-item__icon--favorite">
-// 					<use href={iconSprites + "#icon-star"} />
-// 				</svg>
-// 			</button>

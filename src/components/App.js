@@ -11,40 +11,18 @@ export const VideoContext = createContext();
 export const FavoriteContext = createContext();
 
 const App = () => {
+	const API_KEY = process.env.REACT_APP_API_KEY;
+
 	const [ searchedValue, setSearchedValue ] = useState({
 		videos: [],
 		selectedVideo: null
 	});
 
-	//added clickedFavoritedVideo to handle the click at the favoriteItem
-	const [ favoritedItem, setFavoritedItem ] = useState({
-		clickedFavoritedVideo: null
-	});
-	const [ favoritedList, setFavoritedList ] = useState([]);
-
-	const API_KEY = process.env.REACT_APP_API_KEY;
-
-	const [ lists, setLists ] = useState([]);
-
-	const addList = (newList) => {
-		setLists((prevLists) => {
-			return [ ...prevLists, newList ];
-		});
-	};
-
-	//to prevent creating empty lists objects
-	// const addList = ({title}) =>  {
-	//     if(title.length > 0) {
-	//       setLists(prev => [{title},...prev]);
-	//     }
-	//   }
-
-	const onDeleteList = (id) => {
-		setLists((prevLists) => {
-			return prevLists.filter((listItem, index) => {
-				return index !== id;
-			});
-		});
+	const handleSelectedVideo = (singleRenderedVideo) => {
+		setSearchedValue((previous) => ({
+			...previous,
+			selectedVideo: singleRenderedVideo
+		}));
 	};
 
 	const handleSearch = async (inputText) => {
@@ -68,12 +46,45 @@ const App = () => {
 		handleSearch();
 	}, []);
 
-	const handleSelectedVideo = (singleRenderedVideo) => {
-		setSearchedValue((previous) => ({
-			...previous,
-			selectedVideo: singleRenderedVideo
-		}));
+	// const [ chosenLists, setChosenLists ] = useState([]);
+
+	// const chosenNamedList = (newSelectedList) => {
+	// 	console.log("newSelectedList: ", { newSelectedList });
+	// 	setChosenLists((prevSelectedList) => {
+	// 		return [ ...prevSelectedList, newSelectedList ];
+	// 	});
+	// };
+
+	// console.log("chosenLists: ", { chosenLists });
+
+	const [ selectedList, setSelectedList ] = useState({ title: "" });
+
+	const onChosenList = (chosenList) => {
+		setSelectedList({ title: chosenList });
 	};
+
+	console.log(selectedList);
+
+	const [ lists, setLists ] = useState([]);
+
+	const addList = (newList) => {
+		setLists((prevLists) => {
+			return [ ...prevLists, newList ];
+		});
+	};
+
+	const onDeleteList = (id) => {
+		setLists((prevLists) => {
+			return prevLists.filter((listItem, index) => {
+				return index !== id;
+			});
+		});
+	};
+
+	//added clickedFavoritedVideo to handle the click at the favoriteItem
+	const [ favoritedItem, setFavoritedItem ] = useState({
+		clickedFavoritedVideo: null
+	});
 
 	const handleSelectedFavorite = (renderFavorite) => {
 		setFavoritedItem((previous) => ({
@@ -81,6 +92,8 @@ const App = () => {
 			clickedFavoritedVideo: renderFavorite
 		}));
 	};
+
+	const [ favoritedList, setFavoritedList ] = useState([]);
 
 	const handleFavoritedVideo = (favoritedElement) => {
 		setFavoritedList((previousFavorited) => {
@@ -121,6 +134,7 @@ const App = () => {
 							<VideoList
 								listOfVideos={searchedValue.videos}
 								lists={lists}
+								onChosenList={onChosenList}
 							/>
 						</FavoriteContext.Provider>
 					</VideoContext.Provider>

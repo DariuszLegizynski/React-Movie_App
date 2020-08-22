@@ -16,7 +16,6 @@ const NewList = ({
 	onDeleteFavorited
 }) => {
 	const [ isOpen, setIsOpen ] = useState(false);
-	console.log({ favoritedList });
 	return (
 		<ul className="new-list">
 			<li key={newList.id} className="new-list__item">
