@@ -44,8 +44,8 @@ const VideoItem = ({ singleRenderedVideo, lists, onChosenList }) => {
 					autoFocus
 					isSearchable
 					onChange={(optionLists) => {
-						favoriteContext(singleRenderedVideo);
-						onChosenList(optionLists.label);
+						favoriteContext(singleRenderedVideo, optionLists.label);
+						// onChosenList(optionLists.label);
 					}}
 					placeholder="Select favorite list"
 					noOptionsMessage={() => "Please create a favorite list first"}
@@ -59,3 +59,8 @@ const VideoItem = ({ singleRenderedVideo, lists, onChosenList }) => {
 };
 
 export default VideoItem;
+
+// onChange={(optionLists) => {
+// 	favoriteContext(singleRenderedVideo);
+// 	onChosenList(optionLists.label);
+// }}

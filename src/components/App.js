@@ -84,14 +84,21 @@ const App = () => {
 		}));
 	};
 
-	//Add a newly favorited video to a by user created list (BUG: for now the favorited video is added to EVERY, by the user, created list)
+	//Add a newly favorited video to a, by user created, list (BUG: for now the favorited video is added to EVERY, by the user, created list)
 	const [ favoritedList, setFavoritedList ] = useState([]);
 
-	const handleFavoritedVideo = (favoritedElement) => {
-		setFavoritedList((previousFavorited) => {
-			return [ favoritedElement, ...previousFavorited ];
+	const handleFavoritedVideo = (favoritedElement, listTitle) => {
+		console.log({ listTitle });
+		setFavoritedList((previousFavorited, previousListTitle) => {
+			return [
+				{ favoritedElement, listTitle },
+				...previousFavorited
+				// previousListTitle
+			];
 		});
 	};
+
+	console.log({ favoritedList });
 
 	const deleteFavorited = (id) => {
 		setFavoritedList((prevLists) => {
