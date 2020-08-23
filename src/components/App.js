@@ -46,17 +46,7 @@ const App = () => {
 		handleSearch();
 	}, []);
 
-	// const [ chosenLists, setChosenLists ] = useState([]);
-
-	// const chosenNamedList = (newSelectedList) => {
-	// 	console.log("newSelectedList: ", { newSelectedList });
-	// 	setChosenLists((prevSelectedList) => {
-	// 		return [ ...prevSelectedList, newSelectedList ];
-	// 	});
-	// };
-
-	// console.log("chosenLists: ", { chosenLists });
-
+	//Choose in VideoItem, to which list it will be favorited
 	const [ selectedList, setSelectedList ] = useState({ title: "" });
 
 	const onChosenList = (chosenList) => {
@@ -65,6 +55,7 @@ const App = () => {
 
 	console.log(selectedList);
 
+	//By the user newly created lists
 	const [ lists, setLists ] = useState([]);
 
 	const addList = (newList) => {
@@ -81,7 +72,7 @@ const App = () => {
 		});
 	};
 
-	//added clickedFavoritedVideo to handle the click at the favoriteItem
+	//Render(Play) Favorited Video
 	const [ favoritedItem, setFavoritedItem ] = useState({
 		clickedFavoritedVideo: null
 	});
@@ -93,6 +84,7 @@ const App = () => {
 		}));
 	};
 
+	//Add a newly favorited video to a by user created list (BUG: for now the favorited video is added to EVERY, by the user, created list)
 	const [ favoritedList, setFavoritedList ] = useState([]);
 
 	const handleFavoritedVideo = (favoritedElement) => {
