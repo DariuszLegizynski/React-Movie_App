@@ -58,8 +58,3 @@ const VideoItem = ({ singleRenderedVideo, lists }) => {
 };
 
 export default VideoItem;
-
-// onChange={(optionLists) => {
-// 	favoriteContext(singleRenderedVideo);
-// 	onChosenList(optionLists.label);
-// }}

@@ -19,13 +19,6 @@ const SideBar = ({
 }) => {
 	const year = new Date().getFullYear();
 
-	// const filteredFavorites = lists.map((newList) => {
-	// 	return favoritedList.filter((y) => {
-	// 		return newList.title === y.selectedList;
-	// 	});
-	// });
-	// console.log({ filteredFavorites });
-
 	return (
 		<nav className="sidebar">
 			<ul className="side-nav">
