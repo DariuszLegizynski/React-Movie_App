@@ -43,7 +43,9 @@ const VideoItem = ({ singleRenderedVideo, lists }) => {
 					options={optionLists}
 					autoFocus
 					isSearchable
-					onChange={() => favoriteContext(singleRenderedVideo)}
+					onChange={(optionLists) => {
+						favoriteContext(singleRenderedVideo, optionLists.label);
+					}}
 					placeholder="Select favorite list"
 					noOptionsMessage={() => "Please create a favorite list first"}
 				/>
@@ -56,21 +58,3 @@ const VideoItem = ({ singleRenderedVideo, lists }) => {
 };
 
 export default VideoItem;
-
-// <button
-// 				onClick={() => favoriteContext(singleRenderedVideo)}
-// 				className="video-item__btn--favorite btn"
-// 			>
-// 				<Select
-// 					options={optionLists}
-// 					isMulti
-// 					autoFocus
-// 					isSearchable
-// 					onChange={setChosenList}
-// 					placeholder="Select favorite list"
-// 					noOptionsMessage={() => "Please create a favorite list first"}
-// 				/>
-// 				<svg className="video-item__icon--favorite">
-// 					<use href={iconSprites + "#icon-star"} />
-// 				</svg>
-// 			</button>

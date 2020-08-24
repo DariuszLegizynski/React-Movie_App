@@ -18,6 +18,7 @@ const SideBar = ({
 	onDeleteList
 }) => {
 	const year = new Date().getFullYear();
+
 	return (
 		<nav className="sidebar">
 			<ul className="side-nav">
@@ -49,7 +50,6 @@ const SideBar = ({
 						/>
 					);
 				})}
-
 				<CreateNewList onAdd={addList} />
 			</ul>
 

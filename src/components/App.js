@@ -11,40 +11,18 @@ export const VideoContext = createContext();
 export const FavoriteContext = createContext();
 
 const App = () => {
+	const API_KEY = process.env.REACT_APP_API_KEY;
+
 	const [ searchedValue, setSearchedValue ] = useState({
 		videos: [],
 		selectedVideo: null
 	});
 
-	//added clickedFavoritedVideo to handle the click at the favoriteItem
-	const [ favoritedItem, setFavoritedItem ] = useState({
-		clickedFavoritedVideo: null
-	});
-	const [ favoritedList, setFavoritedList ] = useState([]);
-
-	const API_KEY = process.env.REACT_APP_API_KEY;
-
-	const [ lists, setLists ] = useState([]);
-
-	const addList = (newList) => {
-		setLists((prevLists) => {
-			return [ ...prevLists, newList ];
-		});
-	};
-
-	//to prevent creating empty lists objects
-	// const addList = ({title}) =>  {
-	//     if(title.length > 0) {
-	//       setLists(prev => [{title},...prev]);
-	//     }
-	//   }
-
-	const onDeleteList = (id) => {
-		setLists((prevLists) => {
-			return prevLists.filter((listItem, index) => {
-				return index !== id;
-			});
-		});
+	const handleSelectedVideo = (singleRenderedVideo) => {
+		setSearchedValue((previous) => ({
+			...previous,
+			selectedVideo: singleRenderedVideo
+		}));
 	};
 
 	const handleSearch = async (inputText) => {
@@ -68,12 +46,27 @@ const App = () => {
 		handleSearch();
 	}, []);
 
-	const handleSelectedVideo = (singleRenderedVideo) => {
-		setSearchedValue((previous) => ({
-			...previous,
-			selectedVideo: singleRenderedVideo
-		}));
+	//By the user newly created lists
+	const [ lists, setLists ] = useState([]);
+
+	const addList = (newList) => {
+		setLists((prevLists) => {
+			return [ ...prevLists, newList ];
+		});
 	};
+
+	const onDeleteList = (id) => {
+		setLists((prevLists) => {
+			return prevLists.filter((listItem, index) => {
+				return index !== id;
+			});
+		});
+	};
+
+	//Render(Play) Favorited Video
+	const [ favoritedItem, setFavoritedItem ] = useState({
+		clickedFavoritedVideo: null
+	});
 
 	const handleSelectedFavorite = (renderFavorite) => {
 		setFavoritedItem((previous) => ({
@@ -82,9 +75,12 @@ const App = () => {
 		}));
 	};
 
-	const handleFavoritedVideo = (favoritedElement) => {
+	//Add a newly favorited video to a, by user created, list (BUG: for now the favorited video is added to EVERY, by the user, created list)
+	const [ favoritedList, setFavoritedList ] = useState([]);
+
+	const handleFavoritedVideo = (favoritedElement, selectedList) => {
 		setFavoritedList((previousFavorited) => {
-			return [ favoritedElement, ...previousFavorited ];
+			return [ { favoritedElement, selectedList }, ...previousFavorited ];
 		});
 	};
 
