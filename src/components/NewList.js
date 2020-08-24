@@ -17,6 +17,14 @@ const NewList = ({
 }) => {
 	const [ isOpen, setIsOpen ] = useState(false);
 
+	const filteredFavorites = favoritedList.filter((newFavoritedList) => {
+		return newList.title === newFavoritedList.selectedList;
+	});
+
+	const mappedFavorites = filteredFavorites.map((item) => {
+		return item.favoritedElement;
+	});
+
 	return (
 		<ul className="new-list">
 			<li key={newList.id} className="new-list__item">
@@ -34,7 +42,7 @@ const NewList = ({
 				</div>
 				{isOpen && (
 					<ul className="new-list__favorite-list">
-						{favoritedList.map((newFavoritedList, id) => {
+						{mappedFavorites.map((newFavoritedList, id) => {
 							return (
 								<FavoriteItem
 									key={shortid.generate()}

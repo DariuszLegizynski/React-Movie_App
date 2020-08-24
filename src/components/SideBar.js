@@ -18,15 +18,13 @@ const SideBar = ({
 	onDeleteList
 }) => {
 	const year = new Date().getFullYear();
-	console.log({ lists });
-	console.log({ favoritedList });
 
-	const filteredFavorites = lists.map((x) => {
-		return favoritedList.filter((y) => {
-			return y.selectedList === x.title;
-		});
-	});
-	console.log({ filteredFavorites });
+	// const filteredFavorites = lists.map((newList) => {
+	// 	return favoritedList.filter((y) => {
+	// 		return newList.title === y.selectedList;
+	// 	});
+	// });
+	// console.log({ filteredFavorites });
 
 	return (
 		<nav className="sidebar">
