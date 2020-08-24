@@ -6,7 +6,7 @@ import Select from "react-select";
 import "./VideoItem.css";
 import iconSprites from "../images/sprite.svg";
 
-const VideoItem = ({ singleRenderedVideo, lists, onChosenList }) => {
+const VideoItem = ({ singleRenderedVideo, lists }) => {
 	const videoContext = useContext(VideoContext);
 	const favoriteContext = useContext(FavoriteContext);
 
@@ -45,7 +45,6 @@ const VideoItem = ({ singleRenderedVideo, lists, onChosenList }) => {
 					isSearchable
 					onChange={(optionLists) => {
 						favoriteContext(singleRenderedVideo, optionLists.label);
-						// onChosenList(optionLists.label);
 					}}
 					placeholder="Select favorite list"
 					noOptionsMessage={() => "Please create a favorite list first"}

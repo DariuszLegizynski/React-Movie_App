@@ -18,6 +18,16 @@ const SideBar = ({
 	onDeleteList
 }) => {
 	const year = new Date().getFullYear();
+	console.log({ lists });
+	console.log({ favoritedList });
+
+	const filteredFavorites = lists.map((x) => {
+		return favoritedList.filter((y) => {
+			return y.selectedList === x.title;
+		});
+	});
+	console.log({ filteredFavorites });
+
 	return (
 		<nav className="sidebar">
 			<ul className="side-nav">
@@ -49,7 +59,6 @@ const SideBar = ({
 						/>
 					);
 				})}
-
 				<CreateNewList onAdd={addList} />
 			</ul>
 
