@@ -8,7 +8,7 @@ import shortid from "shortid";
 import "./NewList.css";
 
 const NewList = ({
-	newList,
+	title,
 	index,
 	onDeleteList,
 	handleSelectedFavorite,
@@ -18,7 +18,7 @@ const NewList = ({
 	const [ isOpen, setIsOpen ] = useState(false);
 
 	const filteredFavorites = favoritedList.filter((newFavoritedList) => {
-		return newList.title === newFavoritedList.selectedList;
+		return title === newFavoritedList.selectedList;
 	});
 
 	const mappedFavorites = filteredFavorites.map((item) => {
@@ -27,7 +27,7 @@ const NewList = ({
 
 	return (
 		<ul className="new-list">
-			<li key={newList.id} className="new-list__item">
+			<li key={shortid.generate()} className="new-list__item">
 				<div className="new-list__link">
 					<div
 						className="new-list__accordion"
@@ -36,7 +36,7 @@ const NewList = ({
 						<svg className="new-list__icon">
 							<use href={iconSprites + "#icon-list"} />
 						</svg>
-						<span className="new-list__span">{newList.title}</span>
+						<span className="new-list__span">{title}</span>
 					</div>
 					<DeleteList id={index} onDeleteList={onDeleteList} />
 				</div>

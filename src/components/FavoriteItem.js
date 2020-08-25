@@ -9,7 +9,6 @@ const FavoriteItem = ({
 	onDeleteFavorited,
 	id
 }) => {
-	console.log(newFavoritedList);
 	if (!newFavoritedList) {
 		return <div className="favorite-item__loading">Choose your favorite video</div>;
 	}

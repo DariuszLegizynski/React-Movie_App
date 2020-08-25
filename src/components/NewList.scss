@@ -1,6 +1,11 @@
 @import '../styles/variables';
 
 .new-list {
+	&__accordion {
+		display: flex;
+		align-items: center;
+	}
+
 	&__favorite-list {
 		display: grid;
 		grid-auto-rows: 1fr;
@@ -14,7 +19,13 @@
 		}
 	}
 
-	&__item::before {
+	&__link {
+		display: flex;
+		align-items: center;
+		position: relative;
+	}
+
+	&__link::before {
 		content: "";
 		position: absolute;
 		top: 0;
@@ -27,15 +38,10 @@
 			background-color .1s;
 	}
 
-	&__item:hover::before {
+	&__link:hover::before {
 		transform: scaleY(1);
 		width: 100%;
 		z-index: -1;
-	}
-
-	&__link {
-		display: flex;
-		align-items: center;
 	}
 
 	&__link:link,
