@@ -1,11 +1,13 @@
 @import '../styles/variables';
 
 .side-nav {
-	position: sticky;
+	// position: sticky;
+	// height: 10%;
 	top: 8rem;
 	font-size: 1.4rem;
 	list-style: none;
 	margin-top: 2rem;
+	// overflow-y: scroll;
 }
 
 .btn {

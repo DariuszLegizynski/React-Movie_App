@@ -1,6 +1,7 @@
 import React from "react";
 import CreateNewList from "./CreateNewList";
 import NewList from "./NewList";
+import Footer from "./Footer";
 
 import shortid from "shortid";
 
@@ -14,10 +15,6 @@ const SideBar = ({
 	lists,
 	onDeleteList
 }) => {
-	const year = new Date().getFullYear();
-
-	console.log({ favoritedList });
-
 	return (
 		<nav className="sidebar">
 			<ul className="side-nav">
@@ -37,8 +34,7 @@ const SideBar = ({
 				})}
 				<CreateNewList onAdd={addList} />
 			</ul>
-
-			<div className="legal">&copy; {year} by Readeo. All rights reserved.</div>
+			<Footer />
 		</nav>
 	);
 };

@@ -19,9 +19,14 @@
 
 	flex: 0 0 18%;
 
+	position: sticky;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	// height: 100vh;
+	overflow-y: scroll;
+	top: 0;
+	bottom: 0;
 }
 
 .video {
@@ -30,4 +35,5 @@
 	display: flex;
 	flex-direction: column;
 	flex: 1;
+	position: relative;
 }
