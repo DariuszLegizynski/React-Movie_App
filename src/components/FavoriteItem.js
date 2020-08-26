@@ -1,5 +1,6 @@
 import React from "react";
 import DeleteFavorited from "./DeleteFavorited";
+import { Link } from "react-scroll";
 
 import "./FavoritedItem.css";
 
@@ -14,18 +15,29 @@ const FavoriteItem = ({
 	}
 	return (
 		<li className="favorite-item">
-			<div
-				onClick={() => handleSelectedFavorite(newFavoritedList)}
-				className="favorite-item__btn-selected"
-			>
-				<img
-					className="favorite-item__img"
-					src={newFavoritedList.snippet.thumbnails.medium.url}
-					alt="img"
-				/>
-				<div className="favorite-item__title">
-					{newFavoritedList.snippet.title}
-				</div>
+			<div>
+				<Link
+					activeClass="active"
+					to="video-viewer"
+					smooth={true}
+					spy={true}
+					duration={500}
+					className="video-favorite__link"
+				>
+					<div
+						onClick={() => handleSelectedFavorite(newFavoritedList)}
+						className="favorite-item__btn-selected"
+					>
+						<img
+							className="favorite-item__img"
+							src={newFavoritedList.snippet.thumbnails.medium.url}
+							alt="img"
+						/>
+						<div className="favorite-item__title">
+							{newFavoritedList.snippet.title}
+						</div>
+					</div>
+				</Link>
 			</div>
 			<DeleteFavorited onDeleteFavorited={onDeleteFavorited} id={id} />
 		</li>
