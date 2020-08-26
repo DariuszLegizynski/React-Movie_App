@@ -1,7 +1,7 @@
 import React from "react";
-import CreateNewList from "./CreateNewList";
-import NewList from "./NewList";
-import Footer from "./Footer";
+import CreateNewList from "../CreateNewList/CreateNewList";
+import NewList from "../NewList/NewList";
+import Footer from "../Footer/Footer";
 
 import shortid from "shortid";
 

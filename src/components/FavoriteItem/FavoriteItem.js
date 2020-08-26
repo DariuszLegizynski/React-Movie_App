@@ -1,5 +1,5 @@
 import React from "react";
-import DeleteFavorited from "./DeleteFavorited";
+import DeleteFavorited from "../DeleteFavorited/DeleteFavorited";
 import { Link } from "react-scroll";
 
 import "./FavoritedItem.css";

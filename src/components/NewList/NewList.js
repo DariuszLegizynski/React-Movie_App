@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import DeleteList from "./DeleteList";
-import FavoriteItem from "./FavoriteItem";
+import DeleteList from "../DeleteList/DeleteList";
+import FavoriteItem from "../FavoriteItem/FavoriteItem";
 
-import iconSprites from "../images/sprite.svg";
+import iconSprites from "../../images/sprite.svg";
 import shortid from "shortid";
 
 import "./NewList.css";

@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { VideoContext, FavoriteContext } from "./App";
+import { VideoContext, FavoriteContext } from "../App/App";
 import { Link } from "react-scroll";
 import Select from "react-select";
 
 import "./VideoItem.css";
-import iconSprites from "../images/sprite.svg";
+import iconSprites from "../../images/sprite.svg";
 
 const VideoItem = ({ singleRenderedVideo, lists }) => {
 	const videoContext = useContext(VideoContext);

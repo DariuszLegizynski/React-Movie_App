@@ -1,9 +1,9 @@
 import React, { useState, createContext, useEffect } from "react";
-import NavBar from "./NavBar";
-import youtube from "../apis/youtube";
-import VideoList from "./VideoList";
-import VideoDetail from "./VideoDetail";
-import SideBar from "./SideBar";
+import NavBar from "../NavBar/NavBar";
+import youtube from "../../apis/youtube";
+import VideoList from "../VideoList/VideoList";
+import VideoDetail from "../VideoDetail/VideoDetail";
+import SideBar from "../SideBar/SideBar";
 
 import "./App.css";
 

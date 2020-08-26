@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import iconSprites from "../images/sprite.svg";
+import iconSprites from "../../images/sprite.svg";
 import shortid from "shortid";
 
 const CreateNewList = ({ onAdd }) => {

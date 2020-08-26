@@ -1,5 +1,5 @@
 import React from "react";
-import iconSprites from "../images/sprite.svg";
+import iconSprites from "../../images/sprite.svg";
 
 const DeleteList = ({ id, onDeleteList }) => {
 	const handleClick = () => {

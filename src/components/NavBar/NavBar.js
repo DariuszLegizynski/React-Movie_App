@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import GoogleAuth from "./GoogleAuth";
+import GoogleAuth from "../GoogleAuth/GoogleAuth";
 
 import "./NavBar.css";
-import mainLogo from "../images/logo.svg";
-import iconSprites from "../images/sprite.svg";
+import mainLogo from "../../images/logo.svg";
+import iconSprites from "../../images/sprite.svg";
 
 const NavBar = (props) => {
 	const [ inputText, setInputText ] = useState("");

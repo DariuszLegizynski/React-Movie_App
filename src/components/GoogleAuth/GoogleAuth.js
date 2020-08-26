@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import "./GoogleAuth.css";
-import userFoto from "../images/user.jpg";
-import iconSprites from "../images/sprite.svg";
+import userFoto from "../../images/user.jpg";
+import iconSprites from "../../images/sprite.svg";
 
 const OAUTH_KEY = process.env.REACT_APP_OAUTH_KEY;
 
