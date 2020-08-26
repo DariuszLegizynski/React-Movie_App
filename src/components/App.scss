@@ -2,7 +2,6 @@
 
 .container {
 	max-width: 120 rem;
-	margin: 1rem auto;
 	background-color: $color-grey-light-2;
 	box-shadow: $shadow-dark;
 	/* CSS Smooth Scroll */
@@ -19,14 +18,15 @@
 
 	flex: 0 0 18%;
 
+	position: -webkit-sticky;
 	position: sticky;
+	top: 10vh;
+	height: 90vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	// height: 100vh;
-	overflow-y: scroll;
-	top: 0;
-	bottom: 0;
+
+	overflow: auto;
 }
 
 .video {

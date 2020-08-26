@@ -1,6 +1,5 @@
 .container {
   max-width: 120 rem;
-  margin: 1rem auto;
   background-color: #f4f2f2;
   -webkit-box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
           box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
@@ -20,6 +19,8 @@
           flex: 0 0 18%;
   position: -webkit-sticky;
   position: sticky;
+  top: 10vh;
+  height: 90vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,9 +31,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  overflow-y: scroll;
-  top: 0;
-  bottom: 0;
+  overflow: auto;
 }
 
 .video {
