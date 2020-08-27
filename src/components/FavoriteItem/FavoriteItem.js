@@ -25,8 +25,8 @@ const FavoriteItem = ({
 					className="video-favorite__link"
 				>
 					<div
-						onClick={() => handleSelectedFavorite(newFavoritedList)}
 						className="favorite-item__btn-selected"
+						onClick={() => handleSelectedFavorite(newFavoritedList)}
 					>
 						<img
 							className="favorite-item__img"
@@ -45,3 +45,8 @@ const FavoriteItem = ({
 };
 
 export default FavoriteItem;
+
+// const handleFavorited = (event) => {
+// 	handleSelectedFavorite(newFavoritedList);
+// 	event.preventDefault();
+// };

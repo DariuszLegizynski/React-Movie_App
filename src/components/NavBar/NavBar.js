@@ -5,11 +5,11 @@ import "./NavBar.css";
 import mainLogo from "../../images/logo.svg";
 import iconSprites from "../../images/sprite.svg";
 
-const NavBar = (props) => {
+const NavBar = ({ handleSearch }) => {
 	const [ inputText, setInputText ] = useState("");
 
-	const handleSearch = (event) => {
-		props.handleSearch(inputText);
+	const handleSearched = (event) => {
+		handleSearch(inputText);
 		event.preventDefault();
 	};
 
@@ -21,7 +21,7 @@ const NavBar = (props) => {
 		<header className="header">
 			<img src={mainLogo} alt="readeo logo" className="logo" />
 
-			<form onSubmit={handleSearch} className="navbar">
+			<form onSubmit={handleSearched} className="navbar">
 				<input
 					className="navbar__input"
 					type="text"
