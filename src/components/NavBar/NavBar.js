@@ -8,25 +8,21 @@ import iconSprites from "../../images/sprite.svg";
 const NavBar = ({ handleSearch }) => {
 	const [ inputText, setInputText ] = useState("");
 
-	const handleSearched = (event) => {
+	const onHandleSearched = (event) => {
 		handleSearch(inputText);
 		event.preventDefault();
-	};
-
-	const handleChange = (event) => {
-		setInputText(event.target.value);
 	};
 
 	return (
 		<header className="header">
 			<img src={mainLogo} alt="readeo logo" className="logo" />
 
-			<form onSubmit={handleSearched} className="navbar">
+			<form onSubmit={onHandleSearched} className="navbar">
 				<input
 					className="navbar__input"
 					type="text"
 					placeholder="Type in to search for videos"
-					onChange={handleChange}
+					onChange={(event) => setInputText(event.target.value)}
 					value={inputText}
 				/>
 				<button className="navbar__button">

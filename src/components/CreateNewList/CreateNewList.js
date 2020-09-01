@@ -17,6 +17,7 @@ const CreateNewList = ({ onAdd }) => {
 				title: value
 			};
 		});
+		event.preventDefault();
 	};
 
 	const submitNewList = (event) => {

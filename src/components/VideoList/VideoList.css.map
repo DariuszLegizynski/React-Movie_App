@@ -3,7 +3,7 @@
     "mappings": "AAEA,AAAA,WAAW,CAAC;EACX,WAAW,EAAE,yBAAyB;EACtC,MAAM,EAAE,MAAM;EAEd,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,oCAAoC;EAC3D,QAAQ,EAAE,IAAI;CACd",
     "sources": [
         "VideoList.scss",
-        "../styles/_variables.scss"
+        "../../styles/_variables.scss"
     ],
     "names": [],
     "file": "VideoList.css"

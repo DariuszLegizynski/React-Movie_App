@@ -3,7 +3,7 @@
     "mappings": "AAEA,AAAA,SAAS,CAAC;EAGT,GAAG,EAAE,IAAI;EACT,SAAS,EAAE,MAAM;EACjB,UAAU,EAAE,IAAI;EAChB,UAAU,EAAE,IAAI;CAEhB;;AAED,AAAA,IAAI,CAAC;EACJ,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,MAAM,EAAE,IAAI;EACZ,gBAAgB,EAAE,OAAO;CACzB;;AAED,AAAA,MAAM,CAAC;EACN,SAAS,EAAE,MAAM;EACjB,KAAK,ECVc,IAAI;EDWvB,UAAU,EAAE,MAAM;EAClB,OAAO,EAAE,MAAM;CACf",
     "sources": [
         "SideBar.scss",
-        "../styles/_variables.scss"
+        "../../styles/_variables.scss"
     ],
     "names": [],
     "file": "SideBar.css"

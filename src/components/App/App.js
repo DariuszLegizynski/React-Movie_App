@@ -13,8 +13,9 @@ export const FavoriteContext = createContext();
 const App = () => {
 	const API_KEY = process.env.REACT_APP_API_KEY;
 
+	const [ videos, setVideos ] = useState([]);
+
 	const [ searchedValue, setSearchedValue ] = useState({
-		videos: [],
 		selectedVideo: null
 	});
 
@@ -36,8 +37,9 @@ const App = () => {
 				SameSite: "None"
 			}
 		});
+
+		setVideos(response.data.items);
 		setSearchedValue({
-			videos: response.data.items,
 			selectedVideo: response.data.items[0] //take the first search result and make it appear as a playable one
 		});
 	};
@@ -114,10 +116,7 @@ const App = () => {
 									favoritedItem.clickedFavoritedVideo
 								}
 							/>
-							<VideoList
-								listOfVideos={searchedValue.videos}
-								lists={lists}
-							/>
+							<VideoList listOfVideos={videos} lists={lists} />
 						</FavoriteContext.Provider>
 					</VideoContext.Provider>
 				</main>

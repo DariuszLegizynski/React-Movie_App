@@ -13,6 +13,7 @@ const FavoriteItem = ({
 	if (!newFavoritedList) {
 		return <div className="favorite-item__loading">Choose your favorite video</div>;
 	}
+
 	return (
 		<li className="favorite-item">
 			<div>
@@ -30,7 +31,7 @@ const FavoriteItem = ({
 					>
 						<img
 							className="favorite-item__img"
-							src={newFavoritedList.snippet.thumbnails.medium.url}
+							src={newFavoritedList.snippet.thumbnails.default.url}
 							alt="img"
 						/>
 						<div className="favorite-item__title">
@@ -45,8 +46,3 @@ const FavoriteItem = ({
 };
 
 export default FavoriteItem;
-
-// const handleFavorited = (event) => {
-// 	handleSelectedFavorite(newFavoritedList);
-// 	event.preventDefault();
-// };
