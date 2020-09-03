@@ -10,9 +10,9 @@ import "./App.css";
 export const VideoContext = createContext();
 export const FavoriteContext = createContext();
 
-const App = () => {
-	const API_KEY = process.env.REACT_APP_API_KEY;
+const API_KEY = process.env.REACT_APP_API_KEY;
 
+const App = () => {
 	const [ videos, setVideos ] = useState([]);
 
 	const [ searchedValue, setSearchedValue ] = useState({
@@ -33,8 +33,7 @@ const App = () => {
 				part: "snippet",
 				type: "video",
 				maxResults: 16,
-				key: API_KEY,
-				SameSite: "None"
+				key: API_KEY
 			}
 		});
 
@@ -126,3 +125,30 @@ const App = () => {
 };
 
 export default App;
+
+// const handleSearch = useCallback(
+// 	async (inputText) => {
+// 		const response = await youtube.get("/search", {
+// 			params: {
+// 				q: inputText,
+// 				part: "snippet",
+// 				type: "video",
+// 				maxResults: 16,
+// 				key: API_KEY
+// 			}
+// 		});
+
+// 		setVideos(response.data.items);
+// 		setSearchedValue({
+// 			selectedVideo: response.data.items[0] //take the first search result and make it appear as a playable one
+// 		});
+// 	},
+// 	[ API_KEY ]
+// );
+
+// useEffect(
+// 	() => {
+// 		handleSearch();
+// 	},
+// 	[ handleSearch ]
+// );
