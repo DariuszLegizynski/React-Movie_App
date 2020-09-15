@@ -52,3 +52,28 @@
 		margin-left: 1rem;
 	}
 }
+
+@media only screen and (max-width: 700px) {
+	.user-nav {
+		&__notification {
+			top: 1.2rem;
+		}
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.user-nav {
+		& > * {
+			padding: 0 1rem;
+		}
+
+		&__notification {
+			top: 1.2rem;
+			right: .2rem;
+		}
+
+		&__user-name {
+			display: none;
+		}
+	}
+}

@@ -28,7 +28,7 @@ const NewList = ({
 	return (
 		<ul className="new-list">
 			<li key={shortid.generate()} className="new-list__item">
-				<div className="new-list__link">
+				<form className="new-list__link">
 					<div
 						className="new-list__accordion"
 						onClick={() => setIsOpen(!isOpen)}
@@ -39,7 +39,7 @@ const NewList = ({
 						<span className="new-list__span">{title}</span>
 					</div>
 					<DeleteList id={index} onDeleteList={onDeleteList} />
-				</div>
+				</form>
 				{isOpen && (
 					<ul className="new-list__favorite-list">
 						{mappedFavorites.map((newFavoritedList, id) => {

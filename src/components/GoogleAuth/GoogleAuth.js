@@ -56,8 +56,8 @@ const GoogleAuth = () => {
 						<span className="user-nav__notification">7</span>
 					</div>
 					<div className="user-nav__button">
-						<button onClick={handleSignOut}>
-							{/* <i className="google icon" /> */}
+						<button className="ui red google button" onClick={handleSignOut}>
+							<i className="google icon" />
 							Sign Out
 						</button>
 					</div>
@@ -67,8 +67,8 @@ const GoogleAuth = () => {
 			return (
 				<nav className="user-nav">
 					<div className="user-nav__button">
-						<button onClick={handleSignIn}>
-							{/* <i className="google icon" /> */}
+						<button className="ui red google button" onClick={handleSignIn}>
+							<i className="google icon" />
 							Sign In with Google
 						</button>
 					</div>

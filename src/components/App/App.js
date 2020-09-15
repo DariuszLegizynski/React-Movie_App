@@ -32,7 +32,7 @@ const App = () => {
 				q: inputText,
 				part: "snippet",
 				type: "video",
-				maxResults: 16,
+				maxResults: 24,
 				key: API_KEY
 			}
 		});
@@ -93,18 +93,26 @@ const App = () => {
 		});
 	};
 
+	const [ openSideBar, setOpenSideBar ] = useState(true);
+
 	return (
 		<div className="container">
-			<NavBar handleSearch={handleSearch} />
+			<NavBar
+				handleSearch={handleSearch}
+				openSideBar={openSideBar}
+				setOpenSideBar={setOpenSideBar}
+			/>
 			<div className="content">
-				<SideBar
-					addList={addList}
-					lists={lists}
-					handleSelectedFavorite={handleSelectedFavorite}
-					favoritedList={favoritedList}
-					onDeleteList={onDeleteList}
-					onDeleteFavorited={deleteFavorited}
-				/>
+				{openSideBar && (
+					<SideBar
+						addList={addList}
+						lists={lists}
+						handleSelectedFavorite={handleSelectedFavorite}
+						favoritedList={favoritedList}
+						onDeleteList={onDeleteList}
+						onDeleteFavorited={deleteFavorited}
+					/>
+				)}
 
 				<main className="video">
 					<VideoContext.Provider value={handleSelectedVideo}>
@@ -125,30 +133,3 @@ const App = () => {
 };
 
 export default App;
-
-// const handleSearch = useCallback(
-// 	async (inputText) => {
-// 		const response = await youtube.get("/search", {
-// 			params: {
-// 				q: inputText,
-// 				part: "snippet",
-// 				type: "video",
-// 				maxResults: 16,
-// 				key: API_KEY
-// 			}
-// 		});
-
-// 		setVideos(response.data.items);
-// 		setSearchedValue({
-// 			selectedVideo: response.data.items[0] //take the first search result and make it appear as a playable one
-// 		});
-// 	},
-// 	[ API_KEY ]
-// );
-
-// useEffect(
-// 	() => {
-// 		handleSearch();
-// 	},
-// 	[ handleSearch ]
-// );

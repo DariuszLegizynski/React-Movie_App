@@ -49,4 +49,28 @@
           flex: 1;
   position: relative;
 }
+
+@-webkit-keyframes slide-open {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide-open {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .sidebar {
+    display: none;
+  }
+}
 /*# sourceMappingURL=App.css.map */

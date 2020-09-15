@@ -22,6 +22,9 @@
 }
 
 .new-list__link {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -89,7 +92,7 @@
 }
 
 .new-list__input {
-  width: auto;
+  width: 90%;
   font-family: inherit;
   font-size: inherit;
   background-color: #f4f2f2;
@@ -107,5 +110,12 @@
 .new-list__span {
   padding-left: .7rem;
   margin: .7rem 0;
+}
+
+@media only screen and (max-width: 900px) {
+  .new-list__span {
+    width: 90%;
+    font-size: 90%;
+  }
 }
 /*# sourceMappingURL=NewList.css.map */

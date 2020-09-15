@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import GoogleAuth from "../GoogleAuth/GoogleAuth";
+import SideBarToggleButton from "../SideBarToggleButton/SideBarToggleButton";
 
 import "./NavBar.css";
 import mainLogo from "../../images/logo.svg";
 import iconSprites from "../../images/sprite.svg";
 
-const NavBar = ({ handleSearch }) => {
+const NavBar = ({ handleSearch, openSideBar, setOpenSideBar }) => {
 	const [ inputText, setInputText ] = useState("");
 
 	const onHandleSearched = (event) => {
@@ -15,6 +16,10 @@ const NavBar = ({ handleSearch }) => {
 
 	return (
 		<header className="header">
+			<SideBarToggleButton
+				openSideBar={openSideBar}
+				setOpenSideBar={setOpenSideBar}
+			/>
 			<img src={mainLogo} alt="readeo logo" className="logo" />
 
 			<form onSubmit={onHandleSearched} className="navbar">

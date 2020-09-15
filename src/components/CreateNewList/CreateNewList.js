@@ -29,24 +29,19 @@ const CreateNewList = ({ onAdd }) => {
 	return (
 		<React.Fragment>
 			<li className="new-list__item">
-				<form>
-					<div className="new-list__link">
-						<button
-							onClick={submitNewList}
-							className="new-list__btn-plus btn"
-						>
-							<svg className="new-list__icon">
-								<use href={iconSprites + "#icon-circle-with-plus"} />
-							</svg>
-						</button>
-						<input
-							className="new-list__input"
-							name="title"
-							value={list.title}
-							onChange={handleChange}
-							placeholder="New List"
-						/>
-					</div>
+				<form className="new-list__link">
+					<button onClick={submitNewList} className="new-list__btn-plus btn">
+						<svg className="new-list__icon">
+							<use href={iconSprites + "#icon-circle-with-plus"} />
+						</svg>
+					</button>
+					<input
+						className="new-list__input"
+						name="title"
+						value={list.title}
+						onChange={handleChange}
+						placeholder="New List"
+					/>
 				</form>
 			</li>
 		</React.Fragment>
