@@ -64,16 +64,15 @@
     left: 0;
     height: 100%;
     z-index: 200;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-    -webkit-transition: -webkit-transform .4s ease-out;
-    transition: -webkit-transform .4s ease-out;
-    transition: transform .4s ease-out;
-    transition: transform .4s ease-out, -webkit-transform .4s ease-out;
     position: fixed;
     width: 70%;
     max-width: 400px;
-    z-index: 200;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    transition: -webkit-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   }
   .sidebar.open {
     -webkit-transform: translateX(0);

@@ -114,17 +114,15 @@ const App = () => {
 				setOpenSideBar={setOpenSideBar}
 			/>
 			<div className="content">
-				{openSideBar && (
-					<SideBar
-						openSidebar={openSideBar}
-						addList={addList}
-						lists={lists}
-						handleSelectedFavorite={handleSelectedFavorite}
-						favoritedList={favoritedList}
-						onDeleteList={onDeleteList}
-						onDeleteFavorited={deleteFavorited}
-					/>
-				)}
+				<SideBar
+					openSidebar={openSideBar}
+					addList={addList}
+					lists={lists}
+					handleSelectedFavorite={handleSelectedFavorite}
+					favoritedList={favoritedList}
+					onDeleteList={onDeleteList}
+					onDeleteFavorited={deleteFavorited}
+				/>
 
 				{backslide}
 
