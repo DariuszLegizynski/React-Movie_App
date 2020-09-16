@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,iBAAiB,CAAC;EACjB,QAAQ,EAAE,KAAK;EACf,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,GAAG,EAAE,CAAC;EACN,IAAI,EAAE,CAAC;EACP,UAAU,EAAE,kBAAkB;EAC9B,OAAO,EAAE,GAAG;CACZ;;AAED,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,KAAK;EACvC,AAAA,iBAAiB,CAAC;IACjB,OAAO,EAAE,IAAI;GACb",
+    "sources": [
+        "BackslideSidebar.scss",
+        "../../styles/_variables.scss"
+    ],
+    "names": [],
+    "file": "BackslideSidebar.css"
+}

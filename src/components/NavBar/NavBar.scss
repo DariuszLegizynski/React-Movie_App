@@ -94,3 +94,10 @@
 		margin-left: 2.25rem;
 	}
 }
+
+@media only screen and (max-width: 800px) {
+	.logo {
+		height: 4rem;
+		margin: 1rem .5rem;
+	}
+}

@@ -8,6 +8,7 @@ import shortid from "shortid";
 import "./SideBar.css";
 
 const SideBar = ({
+	openSidebar,
 	handleSelectedFavorite,
 	favoritedList,
 	onDeleteFavorited,
@@ -15,8 +16,13 @@ const SideBar = ({
 	lists,
 	onDeleteList
 }) => {
+	let sidebarClasses = "sidebar";
+	if (openSidebar) {
+		sidebarClasses = "sidebar open";
+	}
+
 	return (
-		<nav className="sidebar">
+		<nav className={sidebarClasses}>
 			<ul className="side-nav">
 				{/* //This part keeps track of the newly created lists and also allows to delete them */}
 				{lists.map((newList, index) => {

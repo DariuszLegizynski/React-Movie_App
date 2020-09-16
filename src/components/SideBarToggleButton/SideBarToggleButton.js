@@ -1,14 +1,16 @@
 import React from "react";
 
+import "./SideBarToggleButton.css";
+
 const SideBarToggleButton = ({ openSideBar, setOpenSideBar }) => {
 	return (
 		<button
-			className="SideBar-toggle-button"
+			className="navbar-toggle-button"
 			onClick={() => setOpenSideBar(!openSideBar)}
 		>
-			<div className="toggle-button__line">-</div>
-			<div className="toggle-button__line">-</div>
-			<div className="toggle-button__line">-</div>
+			<div className="navbar-toggle-button__line" />
+			<div className="navbar-toggle-button__line" />
+			<div className="navbar-toggle-button__line" />
 		</button>
 	);
 };

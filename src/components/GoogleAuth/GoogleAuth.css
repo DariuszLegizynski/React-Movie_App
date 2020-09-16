@@ -11,7 +11,7 @@
 }
 
 .user-nav > * {
-  padding: 0 2rem;
+  padding: 0 1rem;
   cursor: pointer;
   height: 100%;
   display: -webkit-box;
@@ -45,7 +45,7 @@
   color: white;
   position: absolute;
   top: 2.2rem;
-  right: 1.1rem;
+  right: .2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -69,13 +69,15 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
-  .user-nav > * {
-    padding: 0 1rem;
-  }
+@media only screen and (max-width: 800px) {
   .user-nav__notification {
     top: 1.2rem;
-    right: .2rem;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .user-nav > * {
+    padding: 0 1rem;
   }
   .user-nav__user-name {
     display: none;

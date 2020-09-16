@@ -38,17 +38,27 @@
 	position: relative;
 }
 
-@keyframes slide-open {
-	0% {
-		left: 100%;
-	}
-	100% {
-		left: 0;
+@media only screen and (max-width: 1000px) {
+	.sidebar {
+		flex: 0 0 24%;
 	}
 }
 
 @media only screen and (max-width: 800px) {
 	.sidebar {
-		display: none;
+		top: 0;
+		left: 0;
+		height: 100%;
+		z-index: 200;
+		transform: translateX(-100%);
+		transition: transform .4s ease-out;
+		position: fixed;
+		width: 70%;
+		max-width: 400px;
+		z-index: 200;
+	}
+
+	.sidebar.open {
+		transform: translateX(0);
 	}
 }

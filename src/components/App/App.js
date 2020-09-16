@@ -6,6 +6,7 @@ import VideoDetail from "../VideoDetail/VideoDetail";
 import SideBar from "../SideBar/SideBar";
 
 import "./App.css";
+import BackslideSidebar from "../BackslideSidebar/BackslideSidebar";
 
 export const VideoContext = createContext();
 export const FavoriteContext = createContext();
@@ -95,6 +96,16 @@ const App = () => {
 
 	const [ openSideBar, setOpenSideBar ] = useState(true);
 
+	const hideSidebar = () => {
+		setOpenSideBar(false);
+	};
+
+	let backslide;
+
+	if (openSideBar) {
+		backslide = <BackslideSidebar hideSidebar={hideSidebar} />;
+	}
+
 	return (
 		<div className="container">
 			<NavBar
@@ -105,6 +116,7 @@ const App = () => {
 			<div className="content">
 				{openSideBar && (
 					<SideBar
+						openSidebar={openSideBar}
 						addList={addList}
 						lists={lists}
 						handleSelectedFavorite={handleSelectedFavorite}
@@ -113,6 +125,8 @@ const App = () => {
 						onDeleteFavorited={deleteFavorited}
 					/>
 				)}
+
+				{backslide}
 
 				<main className="video">
 					<VideoContext.Provider value={handleSelectedVideo}>

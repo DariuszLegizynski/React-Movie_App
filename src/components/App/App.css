@@ -50,27 +50,34 @@
   position: relative;
 }
 
-@-webkit-keyframes slide-open {
-  0% {
-    left: 100%;
-  }
-  100% {
-    left: 0;
-  }
-}
-
-@keyframes slide-open {
-  0% {
-    left: 100%;
-  }
-  100% {
-    left: 0;
+@media only screen and (max-width: 1000px) {
+  .sidebar {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 24%;
+            flex: 0 0 24%;
   }
 }
 
 @media only screen and (max-width: 800px) {
   .sidebar {
-    display: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 200;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: -webkit-transform .4s ease-out;
+    transition: -webkit-transform .4s ease-out;
+    transition: transform .4s ease-out;
+    transition: transform .4s ease-out, -webkit-transform .4s ease-out;
+    position: fixed;
+    width: 70%;
+    max-width: 400px;
+    z-index: 200;
+  }
+  .sidebar.open {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 /*# sourceMappingURL=App.css.map */

@@ -1,0 +1,39 @@
+@import '../../styles/variables';
+
+.navbar-toggle-button {
+	align-self: stretch;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-evenly;
+	width: 6rem;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	box-sizing: border-box;
+
+	&:focus {
+		outline: none;
+	}
+
+	&__line {
+		width: 60%;
+		height: .4rem;
+		background: $color-grey-light-1;
+
+		&:first-child {
+			margin-top: 1.4rem;
+		}
+
+		&:last-child {
+			margin-bottom: 1.4rem;
+		}
+	}
+}
+
+@media only screen and (min-width: 801px) {
+	.navbar-toggle-button {
+		display: none;
+	}
+}
