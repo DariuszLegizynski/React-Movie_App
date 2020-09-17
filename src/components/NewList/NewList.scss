@@ -15,7 +15,9 @@
 	}
 
 	&__favorite-list.open-accordion {
-		max-height: 120vh;
+		display: grid;
+		grid-auto-rows: 1fr;
+		max-height: 130vh;
 		transition: max-height .4s ease-in;
 	}
 

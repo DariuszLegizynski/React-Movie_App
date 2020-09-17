@@ -5,8 +5,6 @@
 	flex-direction: row;
 	align-items: center;
 
-	padding: .5rem;
-
 	&__btn-selected {
 		display: flex;
 		margin: .5rem;
@@ -14,6 +12,7 @@
 
 	&__img {
 		width: 40%;
+		min-height: 74px;
 	}
 
 	&__title {
@@ -36,6 +35,18 @@
 		&:hover {
 			transform: scale(1.2);
 			outline: none;
+		}
+	}
+}
+
+@media only screen and (max-width: 810px) {
+	.favorite-item {
+		&__title {
+			width: 50vh;
+		}
+
+		&__btn--trash {
+			padding-left: 5vh;
 		}
 	}
 }

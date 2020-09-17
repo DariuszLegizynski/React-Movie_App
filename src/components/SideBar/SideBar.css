@@ -14,12 +14,6 @@
           align-items: center;
   border: none;
   background-color: inherit;
-}
-
-.legal {
-  font-size: 1.2rem;
-  color: #777;
-  text-align: center;
-  padding: 2.5rem;
+  padding-right: .2rem;
 }
 /*# sourceMappingURL=SideBar.css.map */

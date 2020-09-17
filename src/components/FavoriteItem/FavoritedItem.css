@@ -9,7 +9,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: .5rem;
 }
 
 .favorite-item__btn-selected {
@@ -21,6 +20,7 @@
 
 .favorite-item__img {
   width: 40%;
+  min-height: 74px;
 }
 
 .favorite-item__title {
@@ -45,5 +45,14 @@
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   outline: none;
+}
+
+@media only screen and (max-width: 810px) {
+  .favorite-item__title {
+    width: 50vh;
+  }
+  .favorite-item__btn--trash {
+    padding-left: 5vh;
+  }
 }
 /*# sourceMappingURL=FavoritedItem.css.map */

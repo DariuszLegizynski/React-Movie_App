@@ -18,7 +18,10 @@
 }
 
 .new-list__favorite-list.open-accordion {
-  max-height: 120vh;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: 1fr;
+  max-height: 130vh;
   -webkit-transition: max-height .4s ease-in;
   transition: max-height .4s ease-in;
 }

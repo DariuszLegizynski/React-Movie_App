@@ -16,30 +16,29 @@ const FavoriteItem = ({
 
 	return (
 		<li className="favorite-item">
-			<div>
-				<Link
-					activeClass="active"
-					to="video-viewer"
-					smooth={true}
-					spy={true}
-					duration={500}
-					className="video-favorite__link"
+			<Link
+				activeClass="active"
+				to="video-viewer"
+				smooth={true}
+				spy={true}
+				duration={500}
+				className="video-favorite__link"
+			>
+				<div
+					className="favorite-item__btn-selected"
+					onClick={() => handleSelectedFavorite(newFavoritedList)}
 				>
-					<div
-						className="favorite-item__btn-selected"
-						onClick={() => handleSelectedFavorite(newFavoritedList)}
-					>
-						<img
-							className="favorite-item__img"
-							src={newFavoritedList.snippet.thumbnails.default.url}
-							alt="img"
-						/>
-						<div className="favorite-item__title">
-							{newFavoritedList.snippet.title}
-						</div>
+					<img
+						className="favorite-item__img"
+						src={newFavoritedList.snippet.thumbnails.default.url}
+						alt="img"
+					/>
+					<div className="favorite-item__title">
+						{newFavoritedList.snippet.title}
 					</div>
-				</Link>
-			</div>
+				</div>
+			</Link>
+
 			<DeleteFavorited onDeleteFavorited={onDeleteFavorited} id={id} />
 		</li>
 	);

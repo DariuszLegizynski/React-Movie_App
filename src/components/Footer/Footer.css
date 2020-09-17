@@ -1,0 +1,79 @@
+.legal {
+  font-size: 1.2rem;
+  color: #777;
+  text-align: center;
+  padding: 2.5rem;
+}
+
+@media only screen and (max-width: 1481px) {
+  .legal {
+    padding: 2.5rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 1380px) {
+  .legal {
+    padding: 2.5rem 6.2rem;
+  }
+}
+
+@media only screen and (max-width: 1292px) {
+  .legal {
+    padding: 2.5rem 5.4rem;
+  }
+}
+
+@media only screen and (max-width: 1203px) {
+  .legal {
+    padding: 2.5rem 4.6rem;
+  }
+}
+
+@media only screen and (max-width: 1201px) {
+  .legal {
+    padding: 2.5rem 6.4rem;
+  }
+}
+
+@media only screen and (max-width: 1128px) {
+  .legal {
+    padding: 2.5rem 5.6rem;
+  }
+}
+
+@media only screen and (max-width: 1052px) {
+  .legal {
+    padding: 2.5rem 5.5rem;
+  }
+}
+
+@media only screen and (max-width: 1042px) {
+  .legal {
+    padding: 2.5rem 5rem;
+  }
+}
+
+@media only screen and (max-width: 1010px) {
+  .legal {
+    padding: 2.5rem 5.8rem;
+  }
+}
+
+@media only screen and (max-width: 940px) {
+  .legal {
+    padding: 2.5rem 5rem;
+  }
+}
+
+@media only screen and (max-width: 872px) {
+  .legal {
+    padding: 2.5rem 4.2rem;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .legal {
+    padding: 2.5rem 4rem;
+  }
+}
+/*# sourceMappingURL=Footer.css.map */
