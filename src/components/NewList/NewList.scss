@@ -9,6 +9,14 @@
 	&__favorite-list {
 		display: grid;
 		grid-auto-rows: 1fr;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease-out;
+	}
+
+	&__favorite-list.open-accordion {
+		max-height: 120vh;
+		transition: max-height .4s ease-in;
 	}
 
 	&__item {

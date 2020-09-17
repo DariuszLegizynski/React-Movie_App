@@ -15,8 +15,6 @@ const NewList = ({
 	favoritedList,
 	onDeleteFavorited
 }) => {
-	const [ isOpen, setIsOpen ] = useState(false);
-
 	const filteredFavorites = favoritedList.filter((newFavoritedList) => {
 		return title === newFavoritedList.selectedList;
 	});
@@ -25,14 +23,19 @@ const NewList = ({
 		return item.favoritedElement;
 	});
 
+	const [ isOpen, setIsOpen ] = useState(false);
+
+	let isOpenClasses = "new-list__favorite-list";
+
+	if (isOpen) {
+		isOpenClasses = "new-list__favorite-list open-accordion";
+	}
+
 	return (
-		<ul className="new-list">
-			<li key={shortid.generate()} className="new-list__item">
+		<ul className="new-list" onClick={() => setIsOpen(!isOpen)}>
+			<li className="new-list__item">
 				<form className="new-list__link">
-					<div
-						className="new-list__accordion"
-						onClick={() => setIsOpen(!isOpen)}
-					>
+					<div className="new-list__accordion">
 						<svg className="new-list__icon">
 							<use href={iconSprites + "#icon-list"} />
 						</svg>
@@ -40,21 +43,19 @@ const NewList = ({
 					</div>
 					<DeleteList id={index} onDeleteList={onDeleteList} />
 				</form>
-				{isOpen && (
-					<ul className="new-list__favorite-list">
-						{mappedFavorites.map((newFavoritedList, id) => {
-							return (
-								<FavoriteItem
-									key={shortid.generate()}
-									id={id}
-									newFavoritedList={newFavoritedList}
-									handleSelectedFavorite={handleSelectedFavorite}
-									onDeleteFavorited={onDeleteFavorited}
-								/>
-							);
-						})}
-					</ul>
-				)}
+				<ul className={isOpenClasses}>
+					{mappedFavorites.map((newFavoritedList, id) => {
+						return (
+							<FavoriteItem
+								key={shortid.generate()}
+								id={id}
+								newFavoritedList={newFavoritedList}
+								handleSelectedFavorite={handleSelectedFavorite}
+								onDeleteFavorited={onDeleteFavorited}
+							/>
+						);
+					})}
+				</ul>
 			</li>
 		</ul>
 	);

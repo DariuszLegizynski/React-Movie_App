@@ -11,6 +11,16 @@
   display: -ms-grid;
   display: grid;
   grid-auto-rows: 1fr;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.3s ease-out;
+  transition: max-height 0.3s ease-out;
+}
+
+.new-list__favorite-list.open-accordion {
+  max-height: 120vh;
+  -webkit-transition: max-height .4s ease-in;
+  transition: max-height .4s ease-in;
 }
 
 .new-list__item {
