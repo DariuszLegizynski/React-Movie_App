@@ -20,7 +20,9 @@ const NavBar = ({ handleSearch, openSideBar, setOpenSideBar }) => {
 				openSideBar={openSideBar}
 				setOpenSideBar={setOpenSideBar}
 			/>
-			<img src={mainLogo} alt="readeo logo" className="logo" />
+			<svg className="logo">
+				<use href={iconSprites + "#icon-star-outlined"} />
+			</svg>
 
 			<form onSubmit={onHandleSearched} className="navbar">
 				<input

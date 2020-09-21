@@ -1,4 +1,4 @@
-.navbar-toggle-button {
+.navbar__toggle--button {
   -ms-flex-item-align: stretch;
       align-self: stretch;
   display: -webkit-box;
@@ -23,26 +23,26 @@
           box-sizing: border-box;
 }
 
-.navbar-toggle-button:focus {
+.navbar__toggle--button:focus {
   outline: none;
 }
 
-.navbar-toggle-button__line {
+.navbar__toggle--button__line {
   width: 60%;
   height: .4rem;
-  background: #faf9f9;
+  background: #333;
 }
 
-.navbar-toggle-button__line:first-child {
+.navbar__toggle--button__line:first-child {
   margin-top: 1.4rem;
 }
 
-.navbar-toggle-button__line:last-child {
+.navbar__toggle--button__line:last-child {
   margin-bottom: 1.4rem;
 }
 
 @media only screen and (min-width: 801px) {
-  .navbar-toggle-button {
+  .navbar__toggle--button {
     display: none;
   }
 }

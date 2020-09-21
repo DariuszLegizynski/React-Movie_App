@@ -48,7 +48,8 @@
   height: 2.5rem;
   width: 2.5rem;
   position: inherit;
-  z-index: 3;
+  right: 1rem;
+  z-index: 2;
   fill: #cadefc;
   filter: drop-shadow(0 0 0.8rem white);
   -webkit-filter: drop-shadow(0 0 0.8rem white);
@@ -64,7 +65,7 @@
   position: absolute;
   right: 3rem;
   top: 2rem;
-  z-index: 2;
+  z-index: 1;
 }
 
 .video-item__link {
@@ -85,12 +86,20 @@
     padding: 1.8rem;
     font-size: 2.25rem;
   }
+  .video-item__icon--favorite {
+    height: 4rem;
+    width: 4rem;
+  }
 }
 
 @media only screen and (min-width: 2500px) {
   .video-item__content {
-    padding: 2rem;
-    font-size: 2.8rem;
+    padding: 6rem;
+    font-size: 3.4rem;
+  }
+  .video-item__icon--favorite {
+    height: 6rem;
+    width: 6rem;
   }
 }
 /*# sourceMappingURL=VideoItem.css.map */

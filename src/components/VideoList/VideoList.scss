@@ -16,16 +16,16 @@
 	}
 }
 
-@media only screen and (min-width: 2000px) {
+@media only screen and (min-width: 1980px) {
 	.video-list {
-		grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
-		grid-gap: 3rem;
+		grid-template-columns: repeat(auto-fit, minmax(38rem, 1fr));
+		grid-gap: 2rem;
 	}
 }
 
-@media only screen and (min-width: 2500px) {
+@media only screen and (min-width: 2450px) {
 	.video-list {
 		grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
-		grid-gap: 4rem;
+		grid-gap: 3rem;
 	}
 }
