@@ -1,5 +1,5 @@
 .user-nav {
-  background-color: yellowgreen;
+  background-color: #1c262b;
   -ms-flex-item-align: stretch;
       align-self: stretch;
   display: -webkit-box;
@@ -61,6 +61,10 @@
   height: 3.75rem;
   border-radius: 50%;
   margin-left: 1rem;
+}
+
+.user-nav__user-name {
+  color: #999;
 }
 
 @media only screen and (min-width: 1600px) {

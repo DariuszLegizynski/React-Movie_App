@@ -2,7 +2,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #c3bef0;
+  background-color: rgba(195, 190, 240, 0.459);
   position: relative;
   -webkit-box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
           box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
@@ -50,7 +50,7 @@
   position: inherit;
   right: 1rem;
   z-index: 2;
-  fill: #cadefc;
+  fill: #defcf9;
   filter: drop-shadow(0 0 0.8rem white);
   -webkit-filter: drop-shadow(0 0 0.8rem white);
 }

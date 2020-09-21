@@ -43,7 +43,7 @@
 		left: 0;
 		height: 100%;
 		width: 3px;
-		background-color: $color-primary;
+		background-color: $color-grey-light-3;
 		transform: scaleY(0);
 		transition: transform .2s, width .4s cubic-bezier(1, 0, 0, 1) .2s,
 			background-color .1s;
@@ -73,13 +73,13 @@
 		width: 1.75rem;
 		height: 1.75rem;
 		margin: 0 1rem;
-		fill: currentColor;
+		fill: $color-grey-dark-1;
 	}
 
 	&__icon-minus {
 		width: 1.75rem;
 		height: 1.75rem;
-		fill: currentColor;
+		fill: $color-grey-dark-2;
 	}
 
 	&__btn-minus {
@@ -91,7 +91,7 @@
 		width: 90%;
 		font-family: inherit;
 		font-size: inherit;
-		background-color: $color-grey-light-2;
+		background-color: $color-grey-light-4;
 		border: none;
 		border-radius: 1rem;
 		padding-left: .7rem;
@@ -99,13 +99,14 @@
 
 		&::-webkit-input-placeholder {
 			font-weight: 100;
-			color: $color-grey-dark-3;
+			color: $color-grey-dark-2;
 		}
 	}
 
 	&__span {
 		padding-left: .7rem;
 		margin: .7rem 0;
+		color: $color-grey-dark-1;
 	}
 }
 
@@ -122,8 +123,6 @@
 		&__icon {
 			width: 2.5rem;
 			height: 2.5rem;
-			margin: 0 1.2rem;
-			fill: currentColor;
 		}
 	}
 }
@@ -141,8 +140,6 @@
 		&__icon {
 			width: 2.75rem;
 			height: 2.75rem;
-			margin: 0 1.2rem;
-			fill: currentColor;
 		}
 	}
 }
@@ -160,8 +157,6 @@
 		&__icon {
 			width: 3rem;
 			height: 3rem;
-			margin: 0 1.2rem;
-			fill: currentColor;
 		}
 	}
 }
@@ -169,8 +164,17 @@
 @media only screen and (max-width: 900px) {
 	.new-list {
 		&__span {
-			width: 90%;
-			font-size: 90%;
+			width: 100%;
+			font-size: 100%;
+		}
+	}
+}
+
+@media only screen and (max-width: 810px) {
+	.new-list {
+		&__icon {
+			width: 2.25rem;
+			height: 2.25rem;
 		}
 	}
 }

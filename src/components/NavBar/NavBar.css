@@ -5,7 +5,7 @@
   font-size: 1.4rem;
   width: 100%;
   height: auto;
-  background-color: #cca8e9;
+  background-color: #1c262b;
   border-bottom: #f4f2f2;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -21,7 +21,7 @@
   width: 6rem;
   margin: 1rem;
   margin-left: 3rem;
-  fill: #333;
+  fill: #ccc;
 }
 
 .navbar {
