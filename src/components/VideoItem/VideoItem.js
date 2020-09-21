@@ -48,7 +48,7 @@ const VideoItem = ({ singleRenderedVideo, lists }) => {
 			<Link
 				activeClass="active"
 				to="video-viewer"
-				smooth={true}
+				smooth={false}
 				spy={true}
 				duration={500}
 				className="video-item__link"
