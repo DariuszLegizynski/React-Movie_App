@@ -63,6 +63,72 @@
   margin-left: 1rem;
 }
 
+@media only screen and (min-width: 1600px) {
+  .user-nav__user-name {
+    font-size: 120%;
+  }
+  .user-nav__user-photo {
+    height: 4.5rem;
+  }
+  .user-nav__icon {
+    height: 2.75rem;
+    width: 2.75rem;
+  }
+  .user-nav__notification {
+    height: 2rem;
+    width: 2rem;
+  }
+  .ui.button {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  .user-nav__user-name {
+    font-size: 140%;
+  }
+  .user-nav__user-photo {
+    height: 5rem;
+    margin-right: 1rem;
+  }
+  .user-nav__icon {
+    height: 3.25rem;
+    width: 3.25rem;
+    margin-right: 1rem;
+  }
+  .user-nav__notification {
+    height: 2.25rem;
+    width: 2.25rem;
+    right: 1rem;
+  }
+  .ui.button {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 2500px) {
+  .user-nav__user-name {
+    font-size: 160%;
+  }
+  .user-nav__user-photo {
+    height: 6rem;
+    margin-right: 1.5rem;
+  }
+  .user-nav__icon {
+    height: 3.5rem;
+    width: 3.5rem;
+    margin-right: 1.5rem;
+  }
+  .user-nav__notification {
+    height: 2.5rem;
+    width: 2.5rem;
+    right: 1.5rem;
+  }
+  .ui.button {
+    font-size: 1.75rem;
+  }
+}
+
 @media only screen and (max-width: 700px) {
   .user-nav__notification {
     top: 1.2rem;

@@ -8,3 +8,24 @@
 	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 	grid-gap: 2rem;
 }
+
+@media only screen and (min-width: 1600px) {
+	.video-list {
+		grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+		grid-gap: 2.25rem;
+	}
+}
+
+@media only screen and (min-width: 2000px) {
+	.video-list {
+		grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+		grid-gap: 3rem;
+	}
+}
+
+@media only screen and (min-width: 2500px) {
+	.video-list {
+		grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+		grid-gap: 4rem;
+	}
+}

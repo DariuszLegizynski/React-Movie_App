@@ -125,6 +125,57 @@
   margin: .7rem 0;
 }
 
+@media only screen and (min-width: 1600px) {
+  .new-list__input {
+    width: 110%;
+    font-size: 150%;
+  }
+  .new-list__span {
+    width: 110%;
+    font-size: 110%;
+  }
+  .new-list__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0 1.2rem;
+    fill: currentColor;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .new-list__input {
+    width: 120%;
+    font-size: 175%;
+  }
+  .new-list__span {
+    width: 130%;
+    font-size: 130%;
+  }
+  .new-list__icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    margin: 0 1.2rem;
+    fill: currentColor;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  .new-list__input {
+    width: 130%;
+    font-size: 200%;
+  }
+  .new-list__span {
+    width: 140%;
+    font-size: 140%;
+  }
+  .new-list__icon {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 1.2rem;
+    fill: currentColor;
+  }
+}
+
 @media only screen and (max-width: 900px) {
   .new-list__span {
     width: 90%;

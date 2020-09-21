@@ -55,4 +55,16 @@
     padding-left: 5vh;
   }
 }
+
+@media only screen and (min-width: 2000px) {
+  .favorite-item__title {
+    width: 30rem;
+  }
+}
+
+@media only screen and (min-width: 2500px) {
+  .favorite-item__title {
+    width: 40rem;
+  }
+}
 /*# sourceMappingURL=FavoritedItem.css.map */

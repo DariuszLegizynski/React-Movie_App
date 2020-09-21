@@ -5,6 +5,30 @@
   padding: 2.5rem;
 }
 
+@media only screen and (min-width: 1600px) {
+  .legal {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .legal {
+    font-size: 1.35rem;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  .legal {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (min-width: 2500px) {
+  .legal {
+    font-size: 1.6rem;
+  }
+}
+
 @media only screen and (max-width: 1481px) {
   .legal {
     padding: 2.5rem 1rem;

@@ -72,4 +72,25 @@
   display: -ms-flexbox;
   display: flex;
 }
+
+@media only screen and (min-width: 1600px) {
+  .video-item__content {
+    padding: 1.5rem;
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  .video-item__content {
+    padding: 1.8rem;
+    font-size: 2.25rem;
+  }
+}
+
+@media only screen and (min-width: 2500px) {
+  .video-item__content {
+    padding: 2rem;
+    font-size: 2.8rem;
+  }
+}
 /*# sourceMappingURL=VideoItem.css.map */

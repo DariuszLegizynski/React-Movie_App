@@ -54,6 +54,45 @@
   font-size: 1.4rem;
 }
 
+@media only screen and (min-width: 1600px) {
+  .video-detail__text__title {
+    font-size: 2rem;
+  }
+  .video-detail__text__description {
+    font-size: 1.7rem;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .video-detail__text {
+    padding: 4rem;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  .video-detail__text__title {
+    font-size: 2.6rem;
+  }
+  .video-detail__text__description {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 2200px) {
+  .video-detail__text {
+    padding: 8rem;
+  }
+}
+
+@media only screen and (min-width: 2500px) {
+  .video-detail__text__title {
+    font-size: 3.8rem;
+  }
+  .video-detail__text__description {
+    font-size: 3.4rem;
+  }
+}
+
 @media only screen and (max-width: 1200px) {
   .video-detail__text {
     -webkit-box-pack: center;

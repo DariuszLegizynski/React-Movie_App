@@ -109,9 +109,68 @@
 	}
 }
 
+@media only screen and (min-width: 1600px) {
+	.new-list {
+		&__input {
+			width: 110%;
+			font-size: 150%;
+		}
+		&__span {
+			width: 110%;
+			font-size: 110%;
+		}
+		&__icon {
+			width: 2.5rem;
+			height: 2.5rem;
+			margin: 0 1.2rem;
+			fill: currentColor;
+		}
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	.new-list {
+		&__input {
+			width: 120%;
+			font-size: 175%;
+		}
+		&__span {
+			width: 130%;
+			font-size: 130%;
+		}
+		&__icon {
+			width: 2.75rem;
+			height: 2.75rem;
+			margin: 0 1.2rem;
+			fill: currentColor;
+		}
+	}
+}
+
+@media only screen and (min-width: 2000px) {
+	.new-list {
+		&__input {
+			width: 130%;
+			font-size: 200%;
+		}
+		&__span {
+			width: 140%;
+			font-size: 140%;
+		}
+		&__icon {
+			width: 3rem;
+			height: 3rem;
+			margin: 0 1.2rem;
+			fill: currentColor;
+		}
+	}
+}
+
 @media only screen and (max-width: 900px) {
-	.new-list__span {
-		width: 90%;
-		font-size: 90%;
+	.new-list {
+		&__span {
+			width: 90%;
+			font-size: 90%;
+		}
 	}
 }
