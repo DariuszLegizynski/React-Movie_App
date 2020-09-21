@@ -3,7 +3,6 @@ import GoogleAuth from "../GoogleAuth/GoogleAuth";
 import SideBarToggleButton from "../SideBarToggleButton/SideBarToggleButton";
 
 import "./NavBar.css";
-import mainLogo from "../../images/logo.svg";
 import iconSprites from "../../images/sprite.svg";
 
 const NavBar = ({ handleSearch, openSideBar, setOpenSideBar }) => {
