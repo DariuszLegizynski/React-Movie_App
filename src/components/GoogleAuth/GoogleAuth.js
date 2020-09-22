@@ -46,7 +46,7 @@ const GoogleAuth = () => {
 			return (
 				<nav className="user-nav">
 					<div className="user-nav__user">
-						<span className="user-nav__user-name">Thunders</span>
+						<span className="user-nav__user-name">Thunder</span>
 						<img src={userFoto} alt="User" className="user-nav__user-photo" />
 					</div>
 					<div className="user-nav__icon-box">
