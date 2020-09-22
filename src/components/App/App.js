@@ -34,7 +34,7 @@ const App = () => {
 				part: "snippet",
 				type: "video",
 				maxResults: 24,
-				key: API_KEY
+				key: "AIzaSyAq6pRVzNWLF89lkj8OSZ0I8Y0O1ipWNQw"
 			}
 		});
 
