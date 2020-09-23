@@ -77,7 +77,7 @@ const App = () => {
 		}));
 	};
 
-	//Add a newly favorited video to a, by user created, list (BUG: for now the favorited video is added to EVERY, by the user, created list)
+	//Add a newly favorited video to a, by user created, list
 	const [ favoritedList, setFavoritedList ] = useState([]);
 
 	const handleFavoritedVideo = (favoritedElement, selectedList) => {
