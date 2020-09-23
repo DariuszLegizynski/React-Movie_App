@@ -9,7 +9,7 @@ const OAUTH_KEY = process.env.REACT_APP_OAUTH_KEY;
 const GoogleAuth = () => {
 	const [ signedIn, setSignedIn ] = useState({ isSignedIn: null });
 
-	const handlAuthChange = () => {
+	const handleAuthChange = () => {
 		setSignedIn({ isSignedIn: window.gapi.auth2.getAuthInstance().isSignedIn.get() });
 	};
 
@@ -34,7 +34,7 @@ const GoogleAuth = () => {
 					});
 					window.gapi.auth2
 						.getAuthInstance()
-						.isSignedIn.listen(handlAuthChange);
+						.isSignedIn.listen(handleAuthChange);
 				});
 		});
 	}, []);

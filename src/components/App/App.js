@@ -77,7 +77,17 @@ const App = () => {
 		}));
 	};
 
-	//Add a newly favorited video to a, by user created, list
+	// const initialState = [];
+	// const reducer = (state, action) => {
+	// 	switch (action) {
+	// 		case "addFavorite":
+	// 			return state;
+	// 			case "removeFavorite":
+	// 				return state.filter
+	// 	}
+	// }
+
+	//Add a newly favorited video to a, by a user created, list
 	const [ favoritedList, setFavoritedList ] = useState([]);
 
 	const handleFavoritedVideo = (favoritedElement, selectedList) => {
