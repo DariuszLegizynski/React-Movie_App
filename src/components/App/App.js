@@ -11,7 +11,7 @@ import BackslideSidebar from "../BackslideSidebar/BackslideSidebar";
 export const VideoContext = createContext();
 export const FavoriteContext = createContext();
 
-const API_KEY = process.env.REACT_APP_API_KEY;
+// const API_KEY = process.env.REACT_APP_API_KEY;
 
 const App = () => {
 	const [ videos, setVideos ] = useState([]);
@@ -34,7 +34,7 @@ const App = () => {
 				part: "snippet",
 				type: "video",
 				maxResults: 24,
-				key: API_KEY
+				key: "AIzaSyDVfeUxsJzp8Vs0xnFGlhC2zrllcqbC4zc"
 			}
 		});
 
@@ -76,16 +76,6 @@ const App = () => {
 			clickedFavoritedVideo: renderFavorite
 		}));
 	};
-
-	// const initialState = [];
-	// const reducer = (state, action) => {
-	// 	switch (action) {
-	// 		case "addFavorite":
-	// 			return state;
-	// 			case "removeFavorite":
-	// 				return state.filter
-	// 	}
-	// }
 
 	//Add a newly favorited video to a, by a user created, list
 	const [ favoritedList, setFavoritedList ] = useState([]);
