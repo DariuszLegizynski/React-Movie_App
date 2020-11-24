@@ -9,7 +9,7 @@ const VideoList = ({ listOfVideos, lists }) => {
 			<VideoItem key={video.id.videoId} singleRenderedVideo={video} lists={lists} />
 		);
 	});
-	return <div className="video-list">{renderedListOfVideos}</div>;
+	return <div className="video-list fadeInFromBottom">{renderedListOfVideos}</div>;
 };
 
 export default VideoList;

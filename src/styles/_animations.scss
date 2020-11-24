@@ -1,0 +1,36 @@
+.fadeIn {
+    -webkit-animation-duration: 6s;
+    animation-duration: 6s;
+    animation: fadeIn 4s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fadeInFromBottom {
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    position: relative;
+    animation: fadeInFromBottom 4s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes fadeInFromBottom {
+    from {
+        top: 10rem;
+        opacity: 0;
+    }
+    to {
+        top: 0rem;
+        opacity: 1;
+    }
+  }

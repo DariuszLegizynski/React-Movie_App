@@ -107,13 +107,13 @@ const App = () => {
 	}
 
 	return (
-		<div className="container">
+		<div className="container fadeIn">
 			<NavBar
 				handleSearch={handleSearch}
 				openSideBar={openSideBar}
 				setOpenSideBar={setOpenSideBar}
 			/>
-			<div className="content">
+			<div className="content fadeIn">
 				<SideBar
 					openSidebar={openSideBar}
 					addList={addList}
@@ -126,7 +126,7 @@ const App = () => {
 
 				{backslide}
 
-				<main className="video">
+				<main className="video fadeIn">
 					<VideoContext.Provider value={handleSelectedVideo}>
 						<FavoriteContext.Provider value={handleFavoritedVideo}>
 							<VideoDetail
