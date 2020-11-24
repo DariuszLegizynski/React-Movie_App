@@ -2,7 +2,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: rgba(195, 190, 240, 0.459);
+  background-color: #D5CABD;
   position: relative;
   -webkit-box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
           box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
@@ -35,8 +35,8 @@
   padding: 1.25rem;
   font-size: 1.2rem;
   text-align: center;
-  background-color: #333;
-  color: #faf9f9;
+  background-color: #D5CABD;
+  color: #333;
 }
 
 .video-item__img {
@@ -45,12 +45,12 @@
 }
 
 .video-item__icon--favorite {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 4rem;
+  width: 4rem;
   position: inherit;
   right: 1rem;
   z-index: 2;
-  fill: #defcf9;
+  fill: #8685EF;
   filter: drop-shadow(0 0 0.8rem white);
   -webkit-filter: drop-shadow(0 0 0.8rem white);
 }
@@ -63,8 +63,8 @@
 
 .video-item__btn--favorite {
   position: absolute;
-  right: 3rem;
-  top: 2rem;
+  right: 1rem;
+  top: .5rem;
   z-index: 1;
 }
 
@@ -87,8 +87,8 @@
     font-size: 2.25rem;
   }
   .video-item__icon--favorite {
-    height: 4rem;
-    width: 4rem;
+    height: 6rem;
+    width: 6rem;
   }
 }
 
@@ -98,8 +98,8 @@
     font-size: 3.4rem;
   }
   .video-item__icon--favorite {
-    height: 6rem;
-    width: 6rem;
+    height: 8rem;
+    width: 8rem;
   }
 }
 /*# sourceMappingURL=VideoItem.css.map */

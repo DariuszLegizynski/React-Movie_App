@@ -2,7 +2,7 @@
 
 .video-item {
 	display: flex;
-	background-color: $color-tertiary;
+	background-color: $color-fourth;
 	position: relative;
 	box-shadow: $shadow-dark;
 
@@ -21,8 +21,8 @@
 		padding: 1.25rem;
 		font-size: 1.2rem;
 		text-align: center;
-		background-color: $color-grey-dark-1;
-		color: $color-grey-light-1;
+		background-color: $color-fourth;
+		color: $color-grey-dark-1;
 	}
 
 	&__img {
@@ -31,8 +31,8 @@
 	}
 
 	&__icon--favorite {
-		height: 2.5rem;
-		width: 2.5rem;
+		height: 4rem;
+		width: 4rem;
 		position: inherit;
 		right: 1rem;
 
@@ -51,8 +51,8 @@
 
 	&__btn--favorite {
 		position: absolute;
-		right: 3rem;
-		top: 2rem;
+		right: 1rem;
+		top: .5rem;
 		z-index: 1;
 	}
 
@@ -77,8 +77,8 @@
 			font-size: 2.25rem;
 		}
 		&__icon--favorite {
-			height: 4rem;
-			width: 4rem;
+			height: 6rem;
+			width: 6rem;
 		}
 	}
 }
@@ -91,8 +91,8 @@
 		}
 
 		&__icon--favorite {
-			height: 6rem;
-			width: 6rem;
+			height: 8rem;
+			width: 8rem;
 		}
 	}
 }

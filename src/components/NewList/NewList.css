@@ -87,16 +87,16 @@
 }
 
 .new-list__icon {
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 2rem;
+  height: 2rem;
   margin: 0 1rem;
   fill: #333;
 }
 
 .new-list__icon-minus {
-  width: 1.75rem;
-  height: 1.75rem;
-  fill: #777;
+  width: 2rem;
+  height: 2rem;
+  fill: #333;
 }
 
 .new-list__btn-minus {

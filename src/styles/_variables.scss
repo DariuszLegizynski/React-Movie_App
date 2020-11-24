@@ -1,7 +1,7 @@
-$color-primary: #defcf9;
-$color-secondary: rgba(83, 50, 201, 0.4);
-$color-tertiary: rgba(195, 190, 240, 0.459);
-$color-fourth: #1c262b;
+$color-primary: #8685EF;
+$color-secondary:#918CB8;
+$color-tertiary:#FAF8FF;
+$color-fourth:#D5CABD;
 
 $color-grey-light-1: #faf9f9;
 $color-grey-light-2: #f4f2f2;
@@ -15,6 +15,6 @@ $color-grey-dark-3: #999;
 $shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
 $shadow-light: 0 0 .8rem rgba(255, 255, 255, 1);
 
-$dark-gradient: linear-gradient(165deg, #251431 0%, $color-tertiary 32%);
-$grey-gradient: linear-gradient(225deg, #251431 0%, $color-secondary 62%);
+$dark-gradient: linear-gradient(165deg, $color-primary 0%, $color-secondary 32%);
+$grey-gradient: linear-gradient(225deg, $color-primary 0%, $color-secondary 62%);
 $default-font-size: 1.6rem;
