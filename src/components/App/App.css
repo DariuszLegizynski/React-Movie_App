@@ -130,6 +130,7 @@
   .sidebar {
     top: 0;
     left: 0;
+    padding-top: 5rem;
     height: 100%;
     z-index: 200;
     position: fixed;
@@ -145,6 +146,12 @@
   .sidebar.open {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .sidebar {
+    padding-top: 8rem;
   }
 }
 /*# sourceMappingURL=App.css.map */
