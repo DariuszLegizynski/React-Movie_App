@@ -1,4 +1,4 @@
-# Reado
+# Readeo
 
 React single page application to browse your favorite youtube movies and save them to your favorites.
 
